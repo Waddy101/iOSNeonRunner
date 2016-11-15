@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20C52BF41DDB7B6600AEDE79 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF31DDB7B6600AEDE79 /* HomeViewController.m */; };
+		20C52BF71DDB7B9000AEDE79 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF61DDB7B9000AEDE79 /* GameViewController.m */; };
+		20C52BFA1DDB7BDA00AEDE79 /* ScoreBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF91DDB7BDA00AEDE79 /* ScoreBoardViewController.m */; };
+		20C52BFD1DDB7BFA00AEDE79 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BFC1DDB7BFA00AEDE79 /* SettingsViewController.m */; };
 		AF24C7811DDB598B00962B7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7801DDB598B00962B7D /* main.m */; };
 		AF24C7841DDB598B00962B7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7831DDB598B00962B7D /* AppDelegate.m */; };
 		AF24C7871DDB598B00962B7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7861DDB598B00962B7D /* ViewController.m */; };
@@ -35,6 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20C52BF21DDB7B6600AEDE79 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		20C52BF31DDB7B6600AEDE79 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		20C52BF51DDB7B9000AEDE79 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		20C52BF61DDB7B9000AEDE79 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		20C52BF81DDB7BDA00AEDE79 /* ScoreBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoardViewController.h; sourceTree = "<group>"; };
+		20C52BF91DDB7BDA00AEDE79 /* ScoreBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoardViewController.m; sourceTree = "<group>"; };
+		20C52BFB1DDB7BFA00AEDE79 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		20C52BFC1DDB7BFA00AEDE79 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		AF24C77C1DDB598B00962B7D /* Neon Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neon Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF24C7801DDB598B00962B7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF24C7821DDB598B00962B7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +118,14 @@
 				AF24C7851DDB598B00962B7D /* ViewController.h */,
 				AF24C7861DDB598B00962B7D /* ViewController.m */,
 				AF24C7881DDB598B00962B7D /* Main.storyboard */,
+				20C52BFB1DDB7BFA00AEDE79 /* SettingsViewController.h */,
+				20C52BFC1DDB7BFA00AEDE79 /* SettingsViewController.m */,
+				20C52BF81DDB7BDA00AEDE79 /* ScoreBoardViewController.h */,
+				20C52BF91DDB7BDA00AEDE79 /* ScoreBoardViewController.m */,
+				20C52BF51DDB7B9000AEDE79 /* GameViewController.h */,
+				20C52BF61DDB7B9000AEDE79 /* GameViewController.m */,
+				20C52BF21DDB7B6600AEDE79 /* HomeViewController.h */,
+				20C52BF31DDB7B6600AEDE79 /* HomeViewController.m */,
 				AF24C78B1DDB598B00962B7D /* Assets.xcassets */,
 				AF24C78D1DDB598C00962B7D /* LaunchScreen.storyboard */,
 				AF24C7901DDB598C00962B7D /* Info.plist */,
@@ -270,9 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C52BF71DDB7B9000AEDE79 /* GameViewController.m in Sources */,
 				AF24C7871DDB598B00962B7D /* ViewController.m in Sources */,
+				20C52BFA1DDB7BDA00AEDE79 /* ScoreBoardViewController.m in Sources */,
 				AF24C7841DDB598B00962B7D /* AppDelegate.m in Sources */,
 				AF24C7811DDB598B00962B7D /* main.m in Sources */,
+				20C52BF41DDB7B6600AEDE79 /* HomeViewController.m in Sources */,
+				20C52BFD1DDB7BFA00AEDE79 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +520,7 @@
 				AF24C7AB1DDB598C00962B7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF24C7AC1DDB598C00962B7D /* Build configuration list for PBXNativeTarget "Neon RunnerTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +529,7 @@
 				AF24C7AE1DDB598C00962B7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF24C7AF1DDB598C00962B7D /* Build configuration list for PBXNativeTarget "Neon RunnerUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +538,7 @@
 				AF24C7B11DDB598C00962B7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

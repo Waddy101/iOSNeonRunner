@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="srI-I5-k6J">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="QXM-rN-ql9">
+            <objects>
+                <navigationController id="srI-I5-k6J" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oy2-d7-3Zn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DsM-uS-z3T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rmj-B4-v50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-766" y="160"/>
+        </scene>
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -26,7 +44,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
-                                    <segue destination="F4x-v5-VbZ" kind="show" id="Wv8-ck-JFt"/>
+                                    <segue destination="F4x-v5-VbZ" kind="show" id="3Y3-yO-VDt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sH-TW-R88">
@@ -35,7 +53,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="6A7-Me-B2M" kind="show" id="lKq-wU-CuF"/>
+                                    <segue destination="6A7-Me-B2M" kind="show" identifier="startGame" id="bLw-W7-QxI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKm-Pw-Ihl">
@@ -44,7 +62,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Scoreboard"/>
                                 <connections>
-                                    <segue destination="W9E-DF-MFt" kind="presentation" id="bTK-c3-4iI"/>
+                                    <segue destination="W9E-DF-MFt" kind="presentation" identifier="showScoreboard" id="qRL-8p-XBI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Neon Runner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2U-oB-cuA">
@@ -56,6 +74,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rAw-8c-e3A"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
@@ -63,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="50" y="153"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="gOf-wS-U81">
             <objects>
-                <viewController id="F4x-v5-VbZ" sceneMemberID="viewController">
+                <viewController id="F4x-v5-VbZ" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JK6-v4-rwX"/>
                         <viewControllerLayoutGuide type="bottom" id="YOw-9C-BF5"/>
@@ -83,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="25" y="732"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="6V4-bh-NJT">
             <objects>
-                <viewController id="6A7-Me-B2M" sceneMemberID="viewController">
+                <viewController id="6A7-Me-B2M" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mu0-DO-KZ3"/>
                         <viewControllerLayoutGuide type="bottom" id="da2-0n-BCh"/>
@@ -103,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="916" y="153"/>
         </scene>
-        <!--View Controller-->
+        <!--Score Board View Controller-->
         <scene sceneID="SlZ-fl-ASU">
             <objects>
-                <viewController id="W9E-DF-MFt" sceneMemberID="viewController">
+                <viewController id="W9E-DF-MFt" customClass="ScoreBoardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="63g-IN-bqq"/>
                         <viewControllerLayoutGuide type="bottom" id="XBY-pd-MBu"/>
