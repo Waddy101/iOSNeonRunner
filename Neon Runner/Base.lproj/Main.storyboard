@@ -8,7 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QXM-rN-ql9">
             <objects>
-                <navigationController id="srI-I5-k6J" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="srI-I5-k6J" sceneMemberID="viewController">
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oy2-d7-3Zn">
