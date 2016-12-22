@@ -17,7 +17,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Configure the view.
+    SKView * skView = (SKView *)self.view;
+    skView.showsFPS = YES;
+    skView.showsNodeCount = YES;
+    skView.showsDrawCount = YES;
+    
+    /* Sprite Kit applies additional optimizations to improve rendering performance */
+    skView.ignoresSiblingOrder = YES;
+    
+    // Create and configure the scene.
+    GameScene *scene = [[GameScene alloc]initWithSize:skView.bounds.size];
+    
+    // Present the scene.
+    [skView presentScene:scene];
 }
+
+// Method to try setting up scene if viewDidLoad doesn't work (i.e. it's too early in the view loading sequence)
+//-(void)viewWillLayoutSubviews {
+//    [super viewWillLayoutSubviews];
+//    
+//    NSLog(@"width: %f, height: %f", self.view.bounds.size.width, self.view.bounds.size.width);
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
