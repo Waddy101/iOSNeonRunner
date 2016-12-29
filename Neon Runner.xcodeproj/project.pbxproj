@@ -12,6 +12,9 @@
 		20C52BFA1DDB7BDA00AEDE79 /* ScoreBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF91DDB7BDA00AEDE79 /* ScoreBoardViewController.m */; };
 		20C52BFD1DDB7BFA00AEDE79 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BFC1DDB7BFA00AEDE79 /* SettingsViewController.m */; };
 		95431EAA1E0B26EF003E6234 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 95431EA91E0B26EF003E6234 /* GameScene.m */; };
+		957178021E1488EA0062F10B /* NRGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 957178011E1488EA0062F10B /* NRGameModel.m */; };
+		957178051E149E310062F10B /* NRPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 957178041E149E310062F10B /* NRPlayer.m */; };
+		957178081E149E3E0062F10B /* NRTrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 957178071E149E3E0062F10B /* NRTrap.m */; };
 		95D65CB71E0B1CC8005C7307 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D65CB41E0B1CC8005C7307 /* Background.png */; };
 		95D65CB81E0B1CC8005C7307 /* Character.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D65CB51E0B1CC8005C7307 /* Character.png */; };
 		95D65CB91E0B1CC8005C7307 /* Spike.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D65CB61E0B1CC8005C7307 /* Spike.png */; };
@@ -53,6 +56,13 @@
 		20C52BFC1DDB7BFA00AEDE79 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		95431EA81E0B26EF003E6234 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		95431EA91E0B26EF003E6234 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		957178001E1488EA0062F10B /* NRGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameModel.h; sourceTree = "<group>"; };
+		957178011E1488EA0062F10B /* NRGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameModel.m; sourceTree = "<group>"; };
+		957178031E149E310062F10B /* NRPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRPlayer.h; sourceTree = "<group>"; };
+		957178041E149E310062F10B /* NRPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRPlayer.m; sourceTree = "<group>"; };
+		957178061E149E3E0062F10B /* NRTrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRTrap.h; sourceTree = "<group>"; };
+		957178071E149E3E0062F10B /* NRTrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRTrap.m; sourceTree = "<group>"; };
+		9571780A1E14B5DE0062F10B /* NREnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NREnums.h; sourceTree = "<group>"; };
 		95D65CB41E0B1CC8005C7307 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		95D65CB51E0B1CC8005C7307 /* Character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Character.png; sourceTree = "<group>"; };
 		95D65CB61E0B1CC8005C7307 /* Spike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spike.png; sourceTree = "<group>"; };
@@ -126,14 +136,21 @@
 				AF24C7821DDB598B00962B7D /* AppDelegate.h */,
 				AF24C7831DDB598B00962B7D /* AppDelegate.m */,
 				AF24C7881DDB598B00962B7D /* Main.storyboard */,
-				20C52BFB1DDB7BFA00AEDE79 /* SettingsViewController.h */,
+				20C52BF51DDB7B9000AEDE79 /* GameViewController.h */,
+				20C52BF61DDB7B9000AEDE79 /* GameViewController.m */,
 				95431EA81E0B26EF003E6234 /* GameScene.h */,
 				95431EA91E0B26EF003E6234 /* GameScene.m */,
+				957178001E1488EA0062F10B /* NRGameModel.h */,
+				957178011E1488EA0062F10B /* NRGameModel.m */,
+				957178031E149E310062F10B /* NRPlayer.h */,
+				957178041E149E310062F10B /* NRPlayer.m */,
+				9571780A1E14B5DE0062F10B /* NREnums.h */,
+				957178061E149E3E0062F10B /* NRTrap.h */,
+				957178071E149E3E0062F10B /* NRTrap.m */,
+				20C52BFB1DDB7BFA00AEDE79 /* SettingsViewController.h */,
 				20C52BFC1DDB7BFA00AEDE79 /* SettingsViewController.m */,
 				20C52BF81DDB7BDA00AEDE79 /* ScoreBoardViewController.h */,
 				20C52BF91DDB7BDA00AEDE79 /* ScoreBoardViewController.m */,
-				20C52BF51DDB7B9000AEDE79 /* GameViewController.h */,
-				20C52BF61DDB7B9000AEDE79 /* GameViewController.m */,
 				20C52BF21DDB7B6600AEDE79 /* HomeViewController.h */,
 				20C52BF31DDB7B6600AEDE79 /* HomeViewController.m */,
 				AF24C78B1DDB598B00962B7D /* Assets.xcassets */,
@@ -235,8 +252,9 @@
 		AF24C7741DDB598B00962B7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = NR;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = aca13amw;
+				ORGANIZATIONNAME = "Darren Vong, Adam Wadsworth";
 				TargetAttributes = {
 					AF24C77B1DDB598B00962B7D = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -309,8 +327,11 @@
 				20C52BF71DDB7B9000AEDE79 /* GameViewController.m in Sources */,
 				95431EAA1E0B26EF003E6234 /* GameScene.m in Sources */,
 				20C52BFA1DDB7BDA00AEDE79 /* ScoreBoardViewController.m in Sources */,
+				957178021E1488EA0062F10B /* NRGameModel.m in Sources */,
+				957178081E149E3E0062F10B /* NRTrap.m in Sources */,
 				AF24C7841DDB598B00962B7D /* AppDelegate.m in Sources */,
 				AF24C7811DDB598B00962B7D /* main.m in Sources */,
+				957178051E149E310062F10B /* NRPlayer.m in Sources */,
 				20C52BF41DDB7B6600AEDE79 /* HomeViewController.m in Sources */,
 				20C52BFD1DDB7BFA00AEDE79 /* SettingsViewController.m in Sources */,
 			);

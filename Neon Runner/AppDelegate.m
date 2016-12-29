@@ -28,6 +28,15 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    UINavigationController* navController = (UINavigationController*)self.window.rootViewController;
+    // Is the current top view the game view?
+    if ([navController.topViewController isKindOfClass:[GameViewController class]]) {
+        NSLog(@"Game sent to background");
+    }
+    else {
+        NSLog(@"Unknown screen sent to background");
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

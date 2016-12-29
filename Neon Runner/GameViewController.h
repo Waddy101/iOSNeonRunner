@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import "GameScene.h"
+#import "NRGameModel.h"
 
 @interface GameViewController : UIViewController
+
+@property (strong) NRGameModel* gameModel;
+@property (strong) GameScene* scene;
 
 @end

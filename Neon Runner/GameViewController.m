@@ -17,7 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+}
+
+// Method to try setting up scene if viewDidLoad doesn't work (i.e. it's too early in the view loading sequence)
+-(void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    self.gameModel = [[NRGameModel alloc]init];
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
@@ -28,18 +33,14 @@
     skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
-    GameScene *scene = [[GameScene alloc]initWithSize:skView.bounds.size];
+    self.scene = [[GameScene alloc]initWithSize:skView.bounds.size];
+    self.scene.gameModel = self.gameModel;
     
     // Present the scene.
-    [skView presentScene:scene];
+    [skView presentScene:self.scene];
+    
+    
 }
-
-// Method to try setting up scene if viewDidLoad doesn't work (i.e. it's too early in the view loading sequence)
-//-(void)viewWillLayoutSubviews {
-//    [super viewWillLayoutSubviews];
-//    
-//    NSLog(@"width: %f, height: %f", self.view.bounds.size.width, self.view.bounds.size.width);
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
