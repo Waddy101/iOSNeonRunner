@@ -1,28 +1,18 @@
 //
-//  GameViewController.m
+//  
 //  Neon Runner
 //
 //  Created by aca13kcv on 15/11/2016.
-//  Copyright © 2016 aca13amw. All rights reserved.
+//  Copyright © 2016 Darren Vong, Adam Wadsworth. All rights reserved.
 //
 
-#import "GameViewController.h"
+#import "NRGameViewController.h"
 
-@interface GameViewController ()
-
-@end
-
-@implementation GameViewController
+@implementation NRGameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-// Method to try setting up scene if viewDidLoad doesn't work (i.e. it's too early in the view loading sequence)
--(void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    self.gameModel = [[NRGameModel alloc]init];
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
@@ -32,14 +22,13 @@
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
     
+    self.gameModel = [[NRGameModel alloc]init];
     // Create and configure the scene.
-    self.scene = [[GameScene alloc]initWithSize:skView.bounds.size];
-    self.scene.gameModel = self.gameModel;
+    self.scene = [[NRGameScene alloc]initWithSize:skView.bounds.size model:self.gameModel];
     
     // Present the scene.
     [skView presentScene:self.scene];
-    
-    
+    NSLog(@"Width: %f, height: %f", skView.bounds.size.width, skView.bounds.size.height);
 }
 
 - (void)didReceiveMemoryWarning {

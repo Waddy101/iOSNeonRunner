@@ -1,18 +1,18 @@
 //
-//  SettingsViewController.m
+//  
 //  Neon Runner
 //
 //  Created by aca13kcv on 15/11/2016.
-//  Copyright © 2016 aca13amw. All rights reserved.
+//  Copyright © 2016 Darren Vong, Adam Wadsworth. All rights reserved.
 //
 
-#import "SettingsViewController.h"
+#import "NRSettingsViewController.h"
 
-@interface SettingsViewController ()
+@interface NRSettingsViewController ()
 
 @end
 
-@implementation SettingsViewController
+@implementation NRSettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

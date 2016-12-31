@@ -1,5 +1,5 @@
 //
-//  NREnums.h
+//  
 //  Neon Runner
 //
 //  Created by Darren Vong on 29/12/2016.

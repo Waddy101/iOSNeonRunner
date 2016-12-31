@@ -1,18 +1,18 @@
 //
-//  AppDelegate.m
+//  
 //  Neon Runner
 //
 //  Created by aca13amw on 15/11/2016.
-//  Copyright © 2016 aca13amw. All rights reserved.
+//  Copyright © 2016 Darren Vong, Adam Wadsworth. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "NRAppDelegate.h"
 
-@interface AppDelegate ()
+@interface NRAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation NRAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -31,7 +31,7 @@
     
     UINavigationController* navController = (UINavigationController*)self.window.rootViewController;
     // Is the current top view the game view?
-    if ([navController.topViewController isKindOfClass:[GameViewController class]]) {
+    if ([navController.topViewController isKindOfClass:[NRGameViewController class]]) {
         NSLog(@"Game sent to background");
     }
     else {

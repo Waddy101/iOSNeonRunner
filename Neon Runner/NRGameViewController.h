@@ -1,19 +1,19 @@
 //
-//  GameViewController.h
+//  
 //  Neon Runner
 //
 //  Created by aca13kcv on 15/11/2016.
-//  Copyright © 2016 aca13amw. All rights reserved.
+//  Copyright © 2016 Darren Vong, Adam Wadsworth. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
-#import "GameScene.h"
+#import "NRGameScene.h"
 #import "NRGameModel.h"
 
-@interface GameViewController : UIViewController
+@interface NRGameViewController : UIViewController
 
 @property (strong) NRGameModel* gameModel;
-@property (strong) GameScene* scene;
+@property (strong) NRGameScene* scene;
 
 @end

@@ -1,27 +1,28 @@
 //
-//  NeonRunnerGameScene.m
+//  
 //  Neon Runner
 //
 //  Created by Darren Vong on 21/12/2016.
-//  Copyright © 2016. All rights reserved.
+//  Copyright © 2016 Darren Vong, Adam Wadsworth. All rights reserved.
 //
 //  A special kind of "subview" - instead of seguing between different views,
 //  change scenes within the view instead.
 
-#import "GameScene.h"
+#import "NRGameScene.h"
 
-#define TRACK_LINE_HEIGHT 10
 static const uint32_t playerCategory = 0x1 << 0;
 static const uint32_t trapCategory = 0x1 << 1;
 
-@implementation GameScene
+@implementation NRGameScene
 
--(id)initWithSize:(CGSize)size {
+-(instancetype)initWithSize:(CGSize)size model:(NRGameModel *)model {
     self = [super initWithSize:size];
     if (self) {
+        _gameModel = model;
         _lastUpdatedTime = 0.0; //arbitrary value
-        _trapSize = size.height/3.5;
+        _trapSize = size.height/6.0;
         _laneSwitchDistance = size.height/3.0;
+        _trackBorderHeight = size.height * 0.1;
         SKSpriteNode* laneBackground = [SKSpriteNode spriteNodeWithImageNamed:@"Background"];
         laneBackground.position = CGPointMake(size.width/2, size.height/2);
         laneBackground.size = size;
@@ -52,9 +53,9 @@ static const uint32_t trapCategory = 0x1 << 1;
     // 150 is just some arbitrary distance declaring how far away the player is from the left of screen
     SKSpriteNode* player = [SKSpriteNode spriteNodeWithImageNamed:@"Character"];
     player.name = @"player";
-    player.position = CGPointMake(150, self.frame.size.height/2.0+TRACK_LINE_HEIGHT);
-    player.zPosition = 4.0;
     player.size = CGSizeMake((self.frame.size.height/3.0) - 40, (self.frame.size.height/3.0) - 40);
+    player.position = CGPointMake(150, self.frame.size.height / 2.0);
+    player.zPosition = 4.0;
     player.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:player.size];
     player.physicsBody.categoryBitMask = playerCategory;
     player.physicsBody.contactTestBitMask = trapCategory;
@@ -62,13 +63,14 @@ static const uint32_t trapCategory = 0x1 << 1;
     [self addChild:player];
 }
 
-//Probs can remove this later as this is merely experimental code...
 -(void)setUpTrap {
     SKSpriteNode* trap = [SKSpriteNode spriteNodeWithImageNamed:@"Spike"];
     trap.name = @"trap";
-    trap.position = CGPointMake(self.frame.size.width-50, 20+TRACK_LINE_HEIGHT);
-    trap.zPosition = 2.0;
     trap.size = CGSizeMake(self.trapSize, self.trapSize);
+    // This depends on the lane, to be changed...
+    trap.position = CGPointMake(self.frame.size.width-50, self.trackBorderHeight);
+    
+    trap.zPosition = 2.0;
     trap.physicsBody = [SKPhysicsBody bodyWithTexture:[SKTexture textureWithImageNamed:@"Spike.png"]
                                                   size:trap.size];
     trap.physicsBody.categoryBitMask = trapCategory;
@@ -99,19 +101,26 @@ static const uint32_t trapCategory = 0x1 << 1;
     [view addGestureRecognizer:downRecogniser];
 }
 
-// To be implemented...
 -(void)swipedUp {
     if ([self.gameModel movePlayer:NR_UP]) {
+        [self movePlayer:NR_UP];
         NSLog(@"Player moved up to lane %ld", (long)self.gameModel.player.lane);
     }
     
 }
 
-// To be implemented...
 -(void)swipedDown {
     if ([self.gameModel movePlayer:NR_DOWN]) {
+        [self movePlayer:NR_DOWN];
         NSLog(@"Player moved down to lane %ld", (long)self.gameModel.player.lane);
     }
+}
+
+-(void)movePlayer:(NRDirection)direction {
+    SKNode* player = [self childNodeWithName:@"player"];
+    CGPoint pos = player.position;
+    pos.y = (direction == NR_UP)? pos.y + self.laneSwitchDistance : pos.y - self.laneSwitchDistance;
+    player.position = pos;
 }
 
 // Potentially a good place to perform scene update method here
@@ -124,36 +133,10 @@ static const uint32_t trapCategory = 0x1 << 1;
         [self.gameModel update];
         self.lastUpdatedTime = currentTime;
     }
-//    SKNode* trap = [self childNodeWithName:@"trap"];
-//    CGPoint p = trap.position;
-//    p.x -= 5;
-//    trap.position = p;
-    
-}
-
-// Quick touch event method to move player towards trap for testing collision
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UITouch* touch = [touches anyObject];
-    CGPoint touchPos = [touch locationInNode:self];
-    SKNode* player = [self childNodeWithName:@"player"];
-    CGPoint playerPos = player.position;
-    
-    if (playerPos.x <= touchPos.x) { // touches is to the right
-        playerPos.x -= 5;
-        if (playerPos.y <= touchPos.y) { // touches to the top
-            playerPos.y -= 5;
-        }
-        else { playerPos.y += 5; }
-        player.position = playerPos;
-    }
-    else {
-        playerPos.x += 5;
-        if (playerPos.y <= touchPos.y) { // touches to the top
-            playerPos.y -= 5;
-        }
-        else { playerPos.y += 5; }
-        player.position = playerPos;
-    }
+    SKNode* trap = [self childNodeWithName:@"trap"];
+    CGPoint p = trap.position;
+    p.x -= 5;
+    trap.position = p;
     
 }
 

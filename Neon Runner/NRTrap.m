@@ -1,5 +1,5 @@
 //
-//  NRTrap.m
+//  
 //  Neon Runner
 //
 //  Created by Darren Vong on 29/12/2016.
@@ -8,8 +8,6 @@
 
 #import "NRTrap.h"
 
-#define TRAP_SIZE 25
-
 @implementation NRTrap
 
 -(instancetype)initWithSceneWidth:(float)width {
@@ -17,7 +15,8 @@
     if (self) {
         // lane in which the trap appears is random
         _lane = (NRLane)(arc4random() % (int)NRLaneMax);
-        _x = width;
+        _sceneWidth = width;
+        _x = width - 50;
     }
     return self;
 }

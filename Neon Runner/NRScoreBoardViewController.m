@@ -1,18 +1,18 @@
 //
-//  ScoreBoardViewController.m
+//  
 //  Neon Runner
 //
 //  Created by aca13kcv on 15/11/2016.
-//  Copyright © 2016 aca13amw. All rights reserved.
+//  Copyright © 2016 Darren Vong, Adam Wadsworth. All rights reserved.
 //
 
-#import "ScoreBoardViewController.h"
+#import "NRScoreBoardViewController.h"
 
-@interface ScoreBoardViewController ()
+@interface NRScoreBoardViewController ()
 
 @end
 
-@implementation ScoreBoardViewController
+@implementation NRScoreBoardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

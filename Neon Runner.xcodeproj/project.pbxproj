@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20C52BF41DDB7B6600AEDE79 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF31DDB7B6600AEDE79 /* HomeViewController.m */; };
-		20C52BF71DDB7B9000AEDE79 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF61DDB7B9000AEDE79 /* GameViewController.m */; };
-		20C52BFA1DDB7BDA00AEDE79 /* ScoreBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF91DDB7BDA00AEDE79 /* ScoreBoardViewController.m */; };
-		20C52BFD1DDB7BFA00AEDE79 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BFC1DDB7BFA00AEDE79 /* SettingsViewController.m */; };
-		95431EAA1E0B26EF003E6234 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 95431EA91E0B26EF003E6234 /* GameScene.m */; };
+		20C52BF41DDB7B6600AEDE79 /* NRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF31DDB7B6600AEDE79 /* NRHomeViewController.m */; };
+		20C52BF71DDB7B9000AEDE79 /* NRGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF61DDB7B9000AEDE79 /* NRGameViewController.m */; };
+		20C52BFA1DDB7BDA00AEDE79 /* NRScoreBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF91DDB7BDA00AEDE79 /* NRScoreBoardViewController.m */; };
+		20C52BFD1DDB7BFA00AEDE79 /* NRSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BFC1DDB7BFA00AEDE79 /* NRSettingsViewController.m */; };
+		95431EAA1E0B26EF003E6234 /* NRGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 95431EA91E0B26EF003E6234 /* NRGameScene.m */; };
 		957178021E1488EA0062F10B /* NRGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 957178011E1488EA0062F10B /* NRGameModel.m */; };
 		957178051E149E310062F10B /* NRPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 957178041E149E310062F10B /* NRPlayer.m */; };
 		957178081E149E3E0062F10B /* NRTrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 957178071E149E3E0062F10B /* NRTrap.m */; };
@@ -20,7 +20,7 @@
 		95D65CB91E0B1CC8005C7307 /* Spike.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D65CB61E0B1CC8005C7307 /* Spike.png */; };
 		95D65CBB1E0B1DB0005C7307 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D65CBA1E0B1DB0005C7307 /* SpriteKit.framework */; };
 		AF24C7811DDB598B00962B7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7801DDB598B00962B7D /* main.m */; };
-		AF24C7841DDB598B00962B7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7831DDB598B00962B7D /* AppDelegate.m */; };
+		AF24C7841DDB598B00962B7D /* NRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7831DDB598B00962B7D /* NRAppDelegate.m */; };
 		AF24C78A1DDB598B00962B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF24C7881DDB598B00962B7D /* Main.storyboard */; };
 		AF24C78C1DDB598B00962B7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF24C78B1DDB598B00962B7D /* Assets.xcassets */; };
 		AF24C78F1DDB598C00962B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF24C78D1DDB598C00962B7D /* LaunchScreen.storyboard */; };
@@ -46,16 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20C52BF21DDB7B6600AEDE79 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		20C52BF31DDB7B6600AEDE79 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		20C52BF51DDB7B9000AEDE79 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		20C52BF61DDB7B9000AEDE79 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		20C52BF81DDB7BDA00AEDE79 /* ScoreBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoardViewController.h; sourceTree = "<group>"; };
-		20C52BF91DDB7BDA00AEDE79 /* ScoreBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoardViewController.m; sourceTree = "<group>"; };
-		20C52BFB1DDB7BFA00AEDE79 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		20C52BFC1DDB7BFA00AEDE79 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		95431EA81E0B26EF003E6234 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		95431EA91E0B26EF003E6234 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		20C52BF21DDB7B6600AEDE79 /* NRHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRHomeViewController.h; sourceTree = "<group>"; };
+		20C52BF31DDB7B6600AEDE79 /* NRHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRHomeViewController.m; sourceTree = "<group>"; };
+		20C52BF51DDB7B9000AEDE79 /* NRGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameViewController.h; sourceTree = "<group>"; };
+		20C52BF61DDB7B9000AEDE79 /* NRGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameViewController.m; sourceTree = "<group>"; };
+		20C52BF81DDB7BDA00AEDE79 /* NRScoreBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRScoreBoardViewController.h; sourceTree = "<group>"; };
+		20C52BF91DDB7BDA00AEDE79 /* NRScoreBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRScoreBoardViewController.m; sourceTree = "<group>"; };
+		20C52BFB1DDB7BFA00AEDE79 /* NRSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRSettingsViewController.h; sourceTree = "<group>"; };
+		20C52BFC1DDB7BFA00AEDE79 /* NRSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRSettingsViewController.m; sourceTree = "<group>"; };
+		95431EA81E0B26EF003E6234 /* NRGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameScene.h; sourceTree = "<group>"; };
+		95431EA91E0B26EF003E6234 /* NRGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameScene.m; sourceTree = "<group>"; };
 		957178001E1488EA0062F10B /* NRGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameModel.h; sourceTree = "<group>"; };
 		957178011E1488EA0062F10B /* NRGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameModel.m; sourceTree = "<group>"; };
 		957178031E149E310062F10B /* NRPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRPlayer.h; sourceTree = "<group>"; };
@@ -69,8 +69,8 @@
 		95D65CBA1E0B1DB0005C7307 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		AF24C77C1DDB598B00962B7D /* Neon Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neon Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF24C7801DDB598B00962B7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AF24C7821DDB598B00962B7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AF24C7831DDB598B00962B7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AF24C7821DDB598B00962B7D /* NRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NRAppDelegate.h; sourceTree = "<group>"; };
+		AF24C7831DDB598B00962B7D /* NRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NRAppDelegate.m; sourceTree = "<group>"; };
 		AF24C7891DDB598B00962B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF24C78B1DDB598B00962B7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF24C78E1DDB598C00962B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -133,13 +133,13 @@
 		AF24C77E1DDB598B00962B7D /* Neon Runner */ = {
 			isa = PBXGroup;
 			children = (
-				AF24C7821DDB598B00962B7D /* AppDelegate.h */,
-				AF24C7831DDB598B00962B7D /* AppDelegate.m */,
+				AF24C7821DDB598B00962B7D /* NRAppDelegate.h */,
+				AF24C7831DDB598B00962B7D /* NRAppDelegate.m */,
 				AF24C7881DDB598B00962B7D /* Main.storyboard */,
-				20C52BF51DDB7B9000AEDE79 /* GameViewController.h */,
-				20C52BF61DDB7B9000AEDE79 /* GameViewController.m */,
-				95431EA81E0B26EF003E6234 /* GameScene.h */,
-				95431EA91E0B26EF003E6234 /* GameScene.m */,
+				20C52BF51DDB7B9000AEDE79 /* NRGameViewController.h */,
+				20C52BF61DDB7B9000AEDE79 /* NRGameViewController.m */,
+				95431EA81E0B26EF003E6234 /* NRGameScene.h */,
+				95431EA91E0B26EF003E6234 /* NRGameScene.m */,
 				957178001E1488EA0062F10B /* NRGameModel.h */,
 				957178011E1488EA0062F10B /* NRGameModel.m */,
 				957178031E149E310062F10B /* NRPlayer.h */,
@@ -147,12 +147,12 @@
 				9571780A1E14B5DE0062F10B /* NREnums.h */,
 				957178061E149E3E0062F10B /* NRTrap.h */,
 				957178071E149E3E0062F10B /* NRTrap.m */,
-				20C52BFB1DDB7BFA00AEDE79 /* SettingsViewController.h */,
-				20C52BFC1DDB7BFA00AEDE79 /* SettingsViewController.m */,
-				20C52BF81DDB7BDA00AEDE79 /* ScoreBoardViewController.h */,
-				20C52BF91DDB7BDA00AEDE79 /* ScoreBoardViewController.m */,
-				20C52BF21DDB7B6600AEDE79 /* HomeViewController.h */,
-				20C52BF31DDB7B6600AEDE79 /* HomeViewController.m */,
+				20C52BFB1DDB7BFA00AEDE79 /* NRSettingsViewController.h */,
+				20C52BFC1DDB7BFA00AEDE79 /* NRSettingsViewController.m */,
+				20C52BF81DDB7BDA00AEDE79 /* NRScoreBoardViewController.h */,
+				20C52BF91DDB7BDA00AEDE79 /* NRScoreBoardViewController.m */,
+				20C52BF21DDB7B6600AEDE79 /* NRHomeViewController.h */,
+				20C52BF31DDB7B6600AEDE79 /* NRHomeViewController.m */,
 				AF24C78B1DDB598B00962B7D /* Assets.xcassets */,
 				AF24C78D1DDB598C00962B7D /* LaunchScreen.storyboard */,
 				AF24C7901DDB598C00962B7D /* Info.plist */,
@@ -324,16 +324,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C52BF71DDB7B9000AEDE79 /* GameViewController.m in Sources */,
-				95431EAA1E0B26EF003E6234 /* GameScene.m in Sources */,
-				20C52BFA1DDB7BDA00AEDE79 /* ScoreBoardViewController.m in Sources */,
+				20C52BF71DDB7B9000AEDE79 /* NRGameViewController.m in Sources */,
+				95431EAA1E0B26EF003E6234 /* NRGameScene.m in Sources */,
+				20C52BFA1DDB7BDA00AEDE79 /* NRScoreBoardViewController.m in Sources */,
 				957178021E1488EA0062F10B /* NRGameModel.m in Sources */,
 				957178081E149E3E0062F10B /* NRTrap.m in Sources */,
-				AF24C7841DDB598B00962B7D /* AppDelegate.m in Sources */,
+				AF24C7841DDB598B00962B7D /* NRAppDelegate.m in Sources */,
 				AF24C7811DDB598B00962B7D /* main.m in Sources */,
 				957178051E149E310062F10B /* NRPlayer.m in Sources */,
-				20C52BF41DDB7B6600AEDE79 /* HomeViewController.m in Sources */,
-				20C52BFD1DDB7BFA00AEDE79 /* SettingsViewController.m in Sources */,
+				20C52BF41DDB7B6600AEDE79 /* NRHomeViewController.m in Sources */,
+				20C52BFD1DDB7BFA00AEDE79 /* NRSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

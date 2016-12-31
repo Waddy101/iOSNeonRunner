@@ -1,5 +1,5 @@
 //
-//  NRPlayer.m
+//  
 //  Neon Runner
 //
 //  Created by Darren Vong on 29/12/2016.
@@ -10,7 +10,7 @@
 
 @implementation NRPlayer
 
--(instancetype)init {
+-(id)init {
     self = [super init];
     if (self) {
         _lane = NRLaneMiddle; // initialise player to be in the middle lane

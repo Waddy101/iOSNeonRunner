@@ -26,7 +26,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NRHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -85,7 +85,7 @@
         <!--Settings View Controller-->
         <scene sceneID="gOf-wS-U81">
             <objects>
-                <viewController id="F4x-v5-VbZ" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController id="F4x-v5-VbZ" customClass="NRSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JK6-v4-rwX"/>
                         <viewControllerLayoutGuide type="bottom" id="YOw-9C-BF5"/>
@@ -105,7 +105,7 @@
         <!--Game View Controller-->
         <scene sceneID="6V4-bh-NJT">
             <objects>
-                <viewController id="6A7-Me-B2M" customClass="GameViewController" sceneMemberID="viewController">
+                <viewController id="6A7-Me-B2M" customClass="NRGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mu0-DO-KZ3"/>
                         <viewControllerLayoutGuide type="bottom" id="da2-0n-BCh"/>
@@ -125,7 +125,7 @@
         <!--Score Board View Controller-->
         <scene sceneID="SlZ-fl-ASU">
             <objects>
-                <viewController id="W9E-DF-MFt" customClass="ScoreBoardViewController" sceneMemberID="viewController">
+                <viewController id="W9E-DF-MFt" customClass="NRScoreBoardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="63g-IN-bqq"/>
                         <viewControllerLayoutGuide type="bottom" id="XBY-pd-MBu"/>

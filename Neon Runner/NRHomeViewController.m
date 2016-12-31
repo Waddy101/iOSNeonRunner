@@ -1,18 +1,18 @@
 //
-//  HomeViewController.m
+//  
 //  Neon Runner
 //
 //  Created by aca13kcv on 15/11/2016.
-//  Copyright © 2016 aca13amw. All rights reserved.
+//  Copyright © 2016 Darren Vong, Adam Wadsworth. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "NRHomeViewController.h"
 
-@interface HomeViewController ()
+@interface NRHomeViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation NRHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
