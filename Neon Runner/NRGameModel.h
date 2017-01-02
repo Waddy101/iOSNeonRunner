@@ -14,14 +14,12 @@
 
 @interface NRGameModel : NSObject
 
-@property (assign) float sceneWidth;
-@property (assign) float sceneHeight;
 @property (assign) int score;
 @property (strong) NRPlayer* player;
-@property (strong) NSMutableArray<NRTrap*> *traps;
+@property (strong) NSMutableArray *traps;
+@property (assign) NSTimeInterval lastUpdatedTime;
 
--(void)update;
+-(void)update:(float)sceneWidth;
 -(BOOL)movePlayer:(NRDirection)direction;
--(void)maybeAddTrap:(NSTimeInterval*)currentTime;
 
 @end

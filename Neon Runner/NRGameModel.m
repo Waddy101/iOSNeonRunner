@@ -18,12 +18,14 @@
         _score = 0;
         _player = [[NRPlayer alloc]init];
         _traps = [[NSMutableArray alloc]initWithCapacity:MAX_NUM_TRAPS];
+        _lastUpdatedTime = 0.0; //arbitrary value to initialise the variable
     }
     return self;
 }
 
--(void)update {
+-(void)update:(float)sceneWidth {
     self.score += 30;
+//    [self maybeAddTrap:sceneWidth];
 }
 
 -(BOOL)movePlayer:(NRDirection)direction {
@@ -31,8 +33,11 @@
 }
 
 // only add a trap after some time since the last one or via some random criteria?
--(void)maybeAddTrap:(NSTimeInterval*)currentTime {
-    
+-(void)maybeAddTrap:(float)sceneWidth {
+    // 30% chance of adding a trap to game, may dynamically update this later?
+    if (arc4random() % 100 > 70) {
+        [self.traps addObject:[[NRTrap alloc]initWithSceneWidth:sceneWidth]];
+    }
 }
 
 @end

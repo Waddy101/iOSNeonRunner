@@ -13,8 +13,8 @@
 
 @interface NRGameScene : SKScene<SKPhysicsContactDelegate>
 
-@property (weak) NRGameModel* gameModel; //Controller already has a strong copy, so weak is fine here?
-@property (assign) NSTimeInterval lastUpdatedTime;
+// The presenting controller already has a strong copy, so only need a weak reference here
+@property (weak) NRGameModel* gameModel;
 
 // "Constant" values that's only known at run time since these depend on user's phone screen size
 @property (assign) float trapSize;

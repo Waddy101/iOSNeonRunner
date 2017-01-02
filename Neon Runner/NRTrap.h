@@ -13,7 +13,6 @@
 
 // The x (horizontal) position of the trap
 @property (assign) float x;
-@property (assign) float sceneWidth;
 @property (assign) NRLane lane;
 
 -(instancetype)initWithSceneWidth:(float)width;

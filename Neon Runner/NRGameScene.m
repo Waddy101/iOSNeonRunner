@@ -19,7 +19,6 @@ static const uint32_t trapCategory = 0x1 << 1;
     self = [super initWithSize:size];
     if (self) {
         _gameModel = model;
-        _lastUpdatedTime = 0.0; //arbitrary value
         _trapSize = size.height/6.0;
         _laneSwitchDistance = size.height/3.0;
         _trackBorderHeight = size.height * 0.1;
@@ -36,11 +35,10 @@ static const uint32_t trapCategory = 0x1 << 1;
         SKSpriteNode* bottomEdge = [self makeGameBoundary:CGPointMake(0, 0) ofSize:CGSizeMake(size.width, 0)];
         [self addChild:bottomEdge];
         
-        /* Setting up player in the game */
-        [self setUpPlayer];
         
-        /* Setting up trap - hardcoded value, to be changed... */
-        [self setUpTrap];
+        [self setUpPlayer];
+        [self setUpScoreLabel];
+        [self setUpTrap:NRLaneBottom];
         
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
@@ -63,12 +61,24 @@ static const uint32_t trapCategory = 0x1 << 1;
     [self addChild:player];
 }
 
--(void)setUpTrap {
+-(void)setUpTrap:(NRLane)lane {
     SKSpriteNode* trap = [SKSpriteNode spriteNodeWithImageNamed:@"Spike"];
     trap.name = @"trap";
     trap.size = CGSizeMake(self.trapSize, self.trapSize);
     // This depends on the lane, to be changed...
-    trap.position = CGPointMake(self.frame.size.width-50, self.trackBorderHeight);
+    switch (lane) {
+        case NRLaneBottom:
+            trap.position = CGPointMake(self.frame.size.width, self.trackBorderHeight);
+            break;
+        case NRLaneMiddle:
+            trap.position = CGPointMake(self.frame.size.width, self.trackBorderHeight + self.frame.size.height/3.0);
+            break;
+        case NRLaneTop:
+            trap.position = CGPointMake(self.frame.size.width, self.trackBorderHeight + 2/3.0 * self.frame.size.height);
+            break;
+        default:
+            break;
+    }
     
     trap.zPosition = 2.0;
     trap.physicsBody = [SKPhysicsBody bodyWithTexture:[SKTexture textureWithImageNamed:@"Spike.png"]
@@ -78,6 +88,16 @@ static const uint32_t trapCategory = 0x1 << 1;
     trap.physicsBody.collisionBitMask = playerCategory;
     trap.physicsBody.usesPreciseCollisionDetection = YES;
     [self addChild:trap];
+}
+
+-(void)setUpScoreLabel {
+    SKLabelNode* scoreLabel = [SKLabelNode labelNodeWithText:@"Score: 0"];
+    scoreLabel.name = @"score";
+    scoreLabel.position = CGPointMake(100, self.frame.size.height-30);
+    scoreLabel.zPosition = 3.0;
+    scoreLabel.fontColor = [SKColor whiteColor];
+    scoreLabel.fontSize = 24;
+    [self addChild:scoreLabel];
 }
 
 -(SKSpriteNode*)makeGameBoundary:(CGPoint)position ofSize:(CGSize)size {
@@ -125,13 +145,15 @@ static const uint32_t trapCategory = 0x1 << 1;
 
 // Potentially a good place to perform scene update method here
 -(void)update:(NSTimeInterval)currentTime {
-    if (self.lastUpdatedTime == 0.0) {
-        self.lastUpdatedTime = currentTime;
+    if (self.gameModel.lastUpdatedTime == 0.0) {
+        self.gameModel.lastUpdatedTime = currentTime;
     }
     
-    if (currentTime - self.lastUpdatedTime >= 1) {
-        [self.gameModel update];
-        self.lastUpdatedTime = currentTime;
+    if (currentTime - self.gameModel.lastUpdatedTime >= 1) {
+        [self.gameModel update:self.frame.size.width];
+        SKLabelNode* scoreLabel = (SKLabelNode*)[self childNodeWithName:@"score"];
+        scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.gameModel.score];
+        self.gameModel.lastUpdatedTime = currentTime;
     }
     SKNode* trap = [self childNodeWithName:@"trap"];
     CGPoint p = trap.position;

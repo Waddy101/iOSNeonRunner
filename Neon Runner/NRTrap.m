@@ -15,8 +15,7 @@
     if (self) {
         // lane in which the trap appears is random
         _lane = (NRLane)(arc4random() % (int)NRLaneMax);
-        _sceneWidth = width;
-        _x = width - 50;
+        _x = width;
     }
     return self;
 }
