@@ -12,9 +12,11 @@
 		20C52BFA1DDB7BDA00AEDE79 /* NRScoreBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BF91DDB7BDA00AEDE79 /* NRScoreBoardViewController.m */; };
 		20C52BFD1DDB7BFA00AEDE79 /* NRSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C52BFC1DDB7BFA00AEDE79 /* NRSettingsViewController.m */; };
 		95431EAA1E0B26EF003E6234 /* NRGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 95431EA91E0B26EF003E6234 /* NRGameScene.m */; };
+		955753341E27ECBE00C3FD67 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955753331E27ECBE00C3FD67 /* StoreKit.framework */; };
 		957178021E1488EA0062F10B /* NRGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 957178011E1488EA0062F10B /* NRGameModel.m */; };
 		957178051E149E310062F10B /* NRPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 957178041E149E310062F10B /* NRPlayer.m */; };
 		957178081E149E3E0062F10B /* NRTrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 957178071E149E3E0062F10B /* NRTrap.m */; };
+		95D2B0961E27E5CE00FD5909 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D2B0951E27E5CE00FD5909 /* GameKit.framework */; };
 		95D65CB71E0B1CC8005C7307 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D65CB41E0B1CC8005C7307 /* Background.png */; };
 		95D65CB81E0B1CC8005C7307 /* Character.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D65CB51E0B1CC8005C7307 /* Character.png */; };
 		95D65CB91E0B1CC8005C7307 /* Spike.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D65CB61E0B1CC8005C7307 /* Spike.png */; };
@@ -56,6 +58,7 @@
 		20C52BFC1DDB7BFA00AEDE79 /* NRSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRSettingsViewController.m; sourceTree = "<group>"; };
 		95431EA81E0B26EF003E6234 /* NRGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameScene.h; sourceTree = "<group>"; };
 		95431EA91E0B26EF003E6234 /* NRGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameScene.m; sourceTree = "<group>"; };
+		955753331E27ECBE00C3FD67 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		957178001E1488EA0062F10B /* NRGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameModel.h; sourceTree = "<group>"; };
 		957178011E1488EA0062F10B /* NRGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameModel.m; sourceTree = "<group>"; };
 		957178031E149E310062F10B /* NRPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRPlayer.h; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		957178061E149E3E0062F10B /* NRTrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRTrap.h; sourceTree = "<group>"; };
 		957178071E149E3E0062F10B /* NRTrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRTrap.m; sourceTree = "<group>"; };
 		9571780A1E14B5DE0062F10B /* NREnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NREnums.h; sourceTree = "<group>"; };
+		95D2B0951E27E5CE00FD5909 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		95D65CB41E0B1CC8005C7307 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		95D65CB51E0B1CC8005C7307 /* Character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Character.png; sourceTree = "<group>"; };
 		95D65CB61E0B1CC8005C7307 /* Spike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spike.png; sourceTree = "<group>"; };
@@ -88,7 +92,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955753341E27ECBE00C3FD67 /* StoreKit.framework in Frameworks */,
 				95D65CBB1E0B1DB0005C7307 /* SpriteKit.framework in Frameworks */,
+				95D2B0961E27E5CE00FD5909 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,8 @@
 		AF24C7731DDB598B00962B7D = {
 			isa = PBXGroup;
 			children = (
+				955753331E27ECBE00C3FD67 /* StoreKit.framework */,
+				95D2B0951E27E5CE00FD5909 /* GameKit.framework */,
 				95D65CBA1E0B1DB0005C7307 /* SpriteKit.framework */,
 				AF24C77E1DDB598B00962B7D /* Neon Runner */,
 				AF24C7981DDB598C00962B7D /* Neon RunnerTests */,
@@ -258,6 +266,15 @@
 				TargetAttributes = {
 					AF24C77B1DDB598B00962B7D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6YEH9YEK8B;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					AF24C7941DDB598C00962B7D = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -474,10 +491,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Neon Runner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sheffield.Neon-Runner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheffield.vong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -485,10 +505,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Neon Runner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sheffield.Neon-Runner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheffield.vong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

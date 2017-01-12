@@ -65,7 +65,7 @@ static const uint32_t trapCategory = 0x1 << 1;
     SKSpriteNode* trap = [SKSpriteNode spriteNodeWithImageNamed:@"Spike"];
     trap.name = @"trap";
     trap.size = CGSizeMake(self.trapSize, self.trapSize);
-    // This depends on the lane, to be changed...
+    
     switch (lane) {
         case NRLaneBottom:
             trap.position = CGPointMake(self.frame.size.width, self.trackBorderHeight);
