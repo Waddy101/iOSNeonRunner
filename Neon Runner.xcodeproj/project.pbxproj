@@ -28,6 +28,7 @@
 		AF24C78F1DDB598C00962B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF24C78D1DDB598C00962B7D /* LaunchScreen.storyboard */; };
 		AF24C79A1DDB598C00962B7D /* Neon_RunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7991DDB598C00962B7D /* Neon_RunnerTests.m */; };
 		AF24C7A51DDB598C00962B7D /* Neon_RunnerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7A41DDB598C00962B7D /* Neon_RunnerUITests.m */; };
+		AFCA57561E2CEF5E001DA0DA /* NRGameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCA57551E2CEF5E001DA0DA /* NRGameOverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		AF24C7A01DDB598C00962B7D /* Neon RunnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neon RunnerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF24C7A41DDB598C00962B7D /* Neon_RunnerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Neon_RunnerUITests.m; sourceTree = "<group>"; };
 		AF24C7A61DDB598C00962B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFCA57541E2CEF5E001DA0DA /* NRGameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameOverViewController.h; sourceTree = "<group>"; };
+		AFCA57551E2CEF5E001DA0DA /* NRGameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameOverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				AF24C78D1DDB598C00962B7D /* LaunchScreen.storyboard */,
 				AF24C7901DDB598C00962B7D /* Info.plist */,
 				AF24C77F1DDB598B00962B7D /* Supporting Files */,
+				AFCA57541E2CEF5E001DA0DA /* NRGameOverViewController.h */,
+				AFCA57551E2CEF5E001DA0DA /* NRGameOverViewController.m */,
 			);
 			path = "Neon Runner";
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 			files = (
 				20C52BF71DDB7B9000AEDE79 /* NRGameViewController.m in Sources */,
 				95431EAA1E0B26EF003E6234 /* NRGameScene.m in Sources */,
+				AFCA57561E2CEF5E001DA0DA /* NRGameOverViewController.m in Sources */,
 				20C52BFA1DDB7BDA00AEDE79 /* NRScoreBoardViewController.m in Sources */,
 				957178021E1488EA0062F10B /* NRGameModel.m in Sources */,
 				957178081E149E3E0062F10B /* NRTrap.m in Sources */,

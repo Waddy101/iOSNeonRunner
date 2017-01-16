@@ -11,10 +11,12 @@
 #import <GameKit/GameKit.h>
 #import "NRGameScene.h"
 #import "NRGameModel.h"
+#import "NRGameOverViewController.h"
 
 @interface NRGameViewController : UIViewController
 
 @property (strong) NRGameModel* gameModel;
 @property (strong) NRGameScene* scene;
+@property (strong) NRGameOverViewController* gameOverView;
 
 @end

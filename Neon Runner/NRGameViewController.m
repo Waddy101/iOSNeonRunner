@@ -24,9 +24,8 @@
     
     self.gameModel = [[NRGameModel alloc]init];
     // Create and configure the scene.
-    self.scene = [[NRGameScene alloc]initWithSize:skView.bounds.size model:self.gameModel];
-    
-    // Present the scene.
+    self.scene = [[NRGameScene alloc]initWithSize:skView.bounds.size model:self.gameModel controller:self];
+        // Present the scene.
     [skView presentScene:self.scene];
     NSLog(@"Width: %f, height: %f", skView.bounds.size.width, skView.bounds.size.height);
 }
@@ -36,14 +35,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSLog(@"prep for segue");
+    NRGameOverViewController* gameOverViewController = [segue destinationViewController];
+    [gameOverViewController setScore:self.gameModel.score];
 }
-*/
 
 @end

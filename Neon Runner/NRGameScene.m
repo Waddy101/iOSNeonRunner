@@ -12,16 +12,19 @@
 
 static const uint32_t playerCategory = 0x1 << 0;
 static const uint32_t trapCategory = 0x1 << 1;
+static const int MAX_TRAPS = 20;
 
 @implementation NRGameScene
 
--(instancetype)initWithSize:(CGSize)size model:(NRGameModel *)model {
+-(instancetype)initWithSize:(CGSize)size model:(NRGameModel *)model controller:(UIViewController*)controller{
     self = [super initWithSize:size];
     if (self) {
         _gameModel = model;
         _trapSize = size.height/6.0;
         _laneSwitchDistance = size.height/3.0;
         _trackBorderHeight = size.height * 0.1;
+        _newTrapsRequired = YES;
+        _controller = controller;
         SKSpriteNode* laneBackground = [SKSpriteNode spriteNodeWithImageNamed:@"Background"];
         laneBackground.position = CGPointMake(size.width/2, size.height/2);
         laneBackground.size = size;
@@ -38,7 +41,7 @@ static const uint32_t trapCategory = 0x1 << 1;
         
         [self setUpPlayer];
         [self setUpScoreLabel];
-        [self setUpTrap:NRLaneBottom];
+        [self setUpTraps];
         
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
@@ -59,35 +62,91 @@ static const uint32_t trapCategory = 0x1 << 1;
     player.physicsBody.contactTestBitMask = trapCategory;
     player.physicsBody.collisionBitMask = trapCategory;
     [self addChild:player];
+    NSLog(@"%f", player.size.width);
 }
 
--(void)setUpTrap:(NRLane)lane {
-    SKSpriteNode* trap = [SKSpriteNode spriteNodeWithImageNamed:@"Spike"];
-    trap.name = @"trap";
-    trap.size = CGSizeMake(self.trapSize, self.trapSize);
+-(void)setUpTraps {
     
-    switch (lane) {
-        case NRLaneBottom:
-            trap.position = CGPointMake(self.frame.size.width, self.trackBorderHeight);
-            break;
-        case NRLaneMiddle:
-            trap.position = CGPointMake(self.frame.size.width, self.trackBorderHeight + self.frame.size.height/3.0);
-            break;
-        case NRLaneTop:
-            trap.position = CGPointMake(self.frame.size.width, self.trackBorderHeight + 2/3.0 * self.frame.size.height);
-            break;
-        default:
-            break;
+    for(int i=0;i<MAX_TRAPS;i++) {
+        SKSpriteNode* trap = [SKSpriteNode spriteNodeWithImageNamed:@"Spike"];
+        trap.name = @"trap";
+        trap.hidden = YES;
+        trap.size = CGSizeMake(self.trapSize, self.trapSize);
+        trap.position = CGPointMake(self.frame.size.width + trap.size.width/2, self.trackBorderHeight);
+        trap.zPosition = 2.0;
+        trap.physicsBody = [SKPhysicsBody bodyWithTexture:[SKTexture textureWithImageNamed:@"Spike.png"]
+                                                     size:trap.size];
+        trap.physicsBody.categoryBitMask = trapCategory;
+        trap.physicsBody.contactTestBitMask = playerCategory;
+        trap.physicsBody.collisionBitMask = playerCategory;
+        trap.physicsBody.usesPreciseCollisionDetection = YES;
+        [self addChild:trap];
     }
-    
-    trap.zPosition = 2.0;
-    trap.physicsBody = [SKPhysicsBody bodyWithTexture:[SKTexture textureWithImageNamed:@"Spike.png"]
-                                                  size:trap.size];
-    trap.physicsBody.categoryBitMask = trapCategory;
-    trap.physicsBody.contactTestBitMask = playerCategory;
-    trap.physicsBody.collisionBitMask = playerCategory;
-    trap.physicsBody.usesPreciseCollisionDetection = YES;
-    [self addChild:trap];
+
+}
+
+-(void)hideTraps {
+    //If trap is not on screen flag for moving back to right hand side
+}
+
+-(void)updateTrapPositions {
+    //Check trap array
+    //If trap is visible then move  x-variable each time
+    //If new traps need to be drawn, finds a hidden trap and places into the correct lane and then shows the trap (exception for when game starts)
+    __block int numTrapsToAdd = (arc4random() % 2) + 1;
+    __block int lastLane = 5;
+    __block SKSpriteNode* lastTrap;
+    [self enumerateChildNodesWithName:@"trap" usingBlock:^(SKNode *node, BOOL *stop) {
+        //Operate on each trap. Doctor we have to save the trap. It's a trap - Admiral Ackbar
+        if (!node.hidden) {
+            node.position = CGPointMake(node.position.x - 5, node.position.y);
+        }
+        
+        if (node.position.x <= 0) {
+            [node setHidden:YES];
+        }
+        
+        if (numTrapsToAdd == 0) {
+            [self setNewTrapsRequired:NO];
+            lastLane = 5;
+        }
+        
+        if (self.newTrapsRequired && node.hidden) {
+            int lane = (NRLane) arc4random() % 3;
+            
+            while (lane == lastLane) {
+                lane = (NRLane) arc4random() % 3;
+            }
+            
+            switch (lane) {
+                case NRLaneBottom:
+                    node.position = CGPointMake(self.frame.size.width, self.trackBorderHeight);
+                    break;
+                case NRLaneMiddle:
+                    node.position = CGPointMake(self.frame.size.width, self.trackBorderHeight + self.frame.size.height/3.0);
+                    break;
+                case NRLaneTop:
+                    node.position = CGPointMake(self.frame.size.width, self.trackBorderHeight + 2/3.0 * self.frame.size.height);
+                    break;
+                default:
+                    break;
+            }
+            lastLane = lane;
+            numTrapsToAdd -= 1;
+            [node setHidden:NO];
+            NSLog(@"Added trap to el screen");
+        }
+        
+        
+        if (!node.hidden && node.position.x > lastTrap.position.x) {
+            lastTrap = (SKSpriteNode*)node;
+        }
+    }];
+    SKSpriteNode* player = (SKSpriteNode*) [self childNodeWithName:@"player"];
+    if (lastTrap.position.x < (self.frame.size.width - (player.size.width * 1.2) - lastTrap.size.width)) {
+        [self setNewTrapsRequired:YES];
+        NSLog(@"%f",player.size.width);
+    }
 }
 
 -(void)setUpScoreLabel {
@@ -155,10 +214,7 @@ static const uint32_t trapCategory = 0x1 << 1;
         scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.gameModel.score];
         self.gameModel.lastUpdatedTime = currentTime;
     }
-    SKNode* trap = [self childNodeWithName:@"trap"];
-    CGPoint p = trap.position;
-    p.x -= 5;
-    trap.position = p;
+    [self updateTrapPositions];
     
 }
 
@@ -180,7 +236,9 @@ static const uint32_t trapCategory = 0x1 << 1;
         NSLog(@"Player hit trap");
         NSLog(@"Final score: %d", self.gameModel.score);
         self.paused = YES;
-        
+        [self.controller performSegueWithIdentifier:@"gameOver" sender:self];
+        //Navigate to a game over screen?
+    
     }
 }
 

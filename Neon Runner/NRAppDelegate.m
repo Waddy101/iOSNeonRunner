@@ -37,6 +37,7 @@
     else {
         NSLog(@"Unknown screen sent to background");
     }
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
