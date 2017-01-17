@@ -10,4 +10,10 @@
 
 @interface NRSettingsViewController : UIViewController
 
+@property (weak) IBOutlet UISlider* soundFXVolume;
+@property (weak) IBOutlet UISlider* musicVolume;
+
+-(IBAction)goBack;
+-(IBAction)resetData;
+
 @end

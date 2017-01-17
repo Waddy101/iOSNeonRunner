@@ -42,7 +42,9 @@
                                 <rect key="frame" x="260" y="297" width="216" height="67"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Settings"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="0.16654255609999999" green="0.32737518999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="F4x-v5-VbZ" kind="show" id="3Y3-yO-VDt"/>
                                 </connections>
@@ -51,7 +53,9 @@
                                 <rect key="frame" x="260" y="147" width="216" height="67"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.16654255609999999" green="0.32737518999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="6A7-Me-B2M" kind="showDetail" identifier="startGame" action="showViewController:sender:" id="bLw-W7-QxI"/>
                                 </connections>
@@ -60,9 +64,11 @@
                                 <rect key="frame" x="260" y="222" width="216" height="67"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Scoreboard"/>
+                                <state key="normal" title="Scoreboard">
+                                    <color key="titleColor" red="0.16654255609999999" green="0.32737518999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="W9E-DF-MFt" kind="presentation" identifier="showScoreboard" id="qRL-8p-XBI"/>
+                                    <segue destination="W9E-DF-MFt" kind="show" identifier="showScoreboard" id="qRL-8p-XBI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Neon Runner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2U-oB-cuA">
@@ -93,10 +99,59 @@
                     <view key="view" contentMode="scaleToFill" id="SZ3-W6-ylO">
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXc-Dy-DMJ">
+                                <rect key="frame" x="20" y="20" width="108" height="47"/>
+                                <color key="backgroundColor" red="0.99465144230000002" green="0.99465144230000002" blue="0.99465144230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Go Back"/>
+                                <connections>
+                                    <action selector="goBack" destination="F4x-v5-VbZ" eventType="touchUpInside" id="LXq-sN-riQ"/>
+                                    <action selector="goBack" destination="GuO-FN-hcm" eventType="touchUpInside" id="tOb-w8-djh"/>
+                                    <action selector="goBack" destination="W9E-DF-MFt" eventType="touchUpInside" id="uFL-Wp-4jq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound FX Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjV-ZM-1tp">
+                                <rect key="frame" x="300" y="112" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0n-RA-wus">
+                                <rect key="frame" x="315" y="196" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vkr-9V-3Yc">
+                                <rect key="frame" x="150" y="147" width="436" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.16654255609999999" green="0.32737518999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="exH-SV-ag5">
+                                <rect key="frame" x="150" y="238" width="436" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.16654255609999999" green="0.32737518999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtI-i8-mDU">
+                                <rect key="frame" x="331" y="299" width="75" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.96296325800063687" blue="0.99690055474980821" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Reset Data">
+                                    <color key="titleColor" red="0.16654255609999999" green="0.32737518999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetData" destination="F4x-v5-VbZ" eventType="touchUpInside" id="huI-kz-NrD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="musicVolume" destination="exH-SV-ag5" id="NsG-E2-tgE"/>
+                        <outlet property="soundFXVolume" destination="Vkr-9V-3Yc" id="5Ad-Q1-7WJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrJ-qF-49v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,15 +206,6 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhW-aU-G1m">
-                                <rect key="frame" x="30" y="7" width="108" height="47"/>
-                                <color key="backgroundColor" red="0.99465144230769231" green="0.99465144230769231" blue="0.99465144230769231" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Go Back"/>
-                                <connections>
-                                    <action selector="goBack" destination="GuO-FN-hcm" eventType="touchUpInside" id="zKc-h4-WIE"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xS6-Ka-r1w">
                                 <rect key="frame" x="114" y="355" width="67" height="30"/>
                                 <state key="normal" title="Facebook"/>
@@ -179,6 +225,15 @@
                                 <state key="normal" title="Add to Scoreboard"/>
                                 <connections>
                                     <action selector="addToScoreboard:" destination="GuO-FN-hcm" eventType="touchUpInside" id="sIk-fG-Xse"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhW-aU-G1m">
+                                <rect key="frame" x="20" y="20" width="108" height="47"/>
+                                <color key="backgroundColor" red="0.99465144230769231" green="0.99465144230769231" blue="0.99465144230769231" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Go Back"/>
+                                <connections>
+                                    <action selector="goBack" destination="GuO-FN-hcm" eventType="touchUpInside" id="zKc-h4-WIE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -208,14 +263,27 @@
                     <view key="view" contentMode="scaleToFill" id="Ljz-t5-Xtl">
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViE-j7-8mP">
+                                <rect key="frame" x="20" y="20" width="108" height="47"/>
+                                <color key="backgroundColor" red="0.99465144230000002" green="0.99465144230000002" blue="0.99465144230000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Go Back"/>
+                                <connections>
+                                    <action selector="goBack" destination="GuO-FN-hcm" eventType="touchUpInside" id="8g2-Wo-dTS"/>
+                                    <action selector="goBack" destination="W9E-DF-MFt" eventType="touchUpInside" id="Kjb-DT-YAX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHR-5H-kEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="742"/>
+            <point key="canvasLocation" x="916" y="732"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

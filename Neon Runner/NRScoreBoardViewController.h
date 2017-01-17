@@ -10,4 +10,8 @@
 
 @interface NRScoreBoardViewController : UIViewController
 
+-(IBAction)goBack;
+
+-(NSString*)getContents:(int)x y:(int)y;
+
 @end
