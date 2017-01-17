@@ -145,7 +145,7 @@
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSX-55-0Ca">
-                                <rect key="frame" x="237" y="253" width="262" height="94"/>
+                                <rect key="frame" x="237" y="172" width="262" height="94"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -160,13 +160,37 @@
                                     <action selector="goBack" destination="GuO-FN-hcm" eventType="touchUpInside" id="zKc-h4-WIE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xS6-Ka-r1w">
+                                <rect key="frame" x="114" y="355" width="67" height="30"/>
+                                <state key="normal" title="Facebook"/>
+                                <connections>
+                                    <action selector="shareToFacebook:" destination="GuO-FN-hcm" eventType="touchUpInside" id="rRX-1b-Sde"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Q8-Hn-i2I">
+                                <rect key="frame" x="352" y="355" width="48" height="30"/>
+                                <state key="normal" title="Twitter"/>
+                                <connections>
+                                    <action selector="shareToTwitter:" destination="GuO-FN-hcm" eventType="touchUpInside" id="8VL-xO-GbP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNJ-y6-dE6">
+                                <rect key="frame" x="539" y="355" width="129" height="30"/>
+                                <state key="normal" title="Add to Scoreboard"/>
+                                <connections>
+                                    <action selector="addToScoreboard:" destination="GuO-FN-hcm" eventType="touchUpInside" id="sIk-fG-Xse"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="addToScoreboardButton" destination="yNJ-y6-dE6" id="2C0-eD-g9D"/>
+                        <outlet property="facebookButton" destination="xS6-Ka-r1w" id="Gxa-FK-U4s"/>
                         <outlet property="scoreLabel" destination="FSX-55-0Ca" id="tsV-oC-z4T"/>
+                        <outlet property="twitterButton" destination="6Q8-Hn-i2I" id="sv4-CM-3hG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7X1-mT-cmx" userLabel="First Responder" sceneMemberID="firstResponder"/>

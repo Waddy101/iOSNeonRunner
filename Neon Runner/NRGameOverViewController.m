@@ -18,4 +18,16 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+-(IBAction)shareToFacebook:(id)sender {
+    
+}
+
+-(IBAction)shareToTwitter:(id)sender {
+    
+}
+
+-(IBAction)addToScoreboard:(id)sender {
+    
+}
+
 @end

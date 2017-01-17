@@ -10,9 +10,15 @@
 
 @interface NRGameOverViewController : UIViewController
 
-@property (strong) IBOutlet UILabel* scoreLabel;
+@property (weak) IBOutlet UILabel* scoreLabel;
+@property (weak) IBOutlet UIButton* facebookButton;
+@property (weak) IBOutlet UIButton* twitterButton;
+@property (weak) IBOutlet UIButton* addToScoreboardButton;
 @property (assign) int score;
 
 -(IBAction)goBack;
+-(IBAction)shareToFacebook:(id)sender;
+-(IBAction)shareToTwitter:(id)sender;
+-(IBAction)addToScoreboard:(id)sender;
 
 @end
