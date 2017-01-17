@@ -37,9 +37,12 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"prep for segue");
     NRGameOverViewController* gameOverViewController = [segue destinationViewController];
     [gameOverViewController setScore:self.gameModel.score];
+    // Get rid of scene to prevent a finished game from running in background behind game over screen
+    // if user sends the application to background and then brings it back to foreground again
+    SKView* skView = (SKView*)self.view;
+    [skView presentScene:nil];
 }
 
 @end

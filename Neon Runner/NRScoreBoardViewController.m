@@ -136,7 +136,7 @@
 }
 
 -(NSString*)getContents:(int)x y:(int)y {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"scores" ofType:@"plist"];
+    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"scores.plist"];
     NSFileManager* fileManager = [NSFileManager defaultManager];
     if([fileManager fileExistsAtPath:path]) {
         NSArray* scores = [[NSArray alloc] initWithContentsOfFile:path];

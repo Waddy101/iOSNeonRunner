@@ -30,9 +30,12 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     
     UINavigationController* navController = (UINavigationController*)self.window.rootViewController;
+    
     // Is the current top view the game view?
     if ([navController.topViewController isKindOfClass:[NRGameViewController class]]) {
-        NSLog(@"Game sent to background");
+        NRGameViewController* gameController = (NRGameViewController*)navController.topViewController;
+        // Pause the game here...
+        
     }
     else {
         NSLog(@"Unknown screen sent to background");

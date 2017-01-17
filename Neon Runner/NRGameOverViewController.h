@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
+#import "NRScoreSubmissionViewController.h"
 
 @interface NRGameOverViewController : UIViewController
 
@@ -19,6 +21,5 @@
 -(IBAction)goBack;
 -(IBAction)shareToFacebook:(id)sender;
 -(IBAction)shareToTwitter:(id)sender;
--(IBAction)addToScoreboard:(id)sender;
 
 @end

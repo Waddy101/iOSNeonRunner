@@ -16,7 +16,6 @@
 
 @property (assign) int score;
 @property (strong) NRPlayer* player;
-@property (strong) NSMutableArray *traps;
 @property (assign) NSTimeInterval lastUpdatedTime;
 
 -(void)update:(float)sceneWidth;
