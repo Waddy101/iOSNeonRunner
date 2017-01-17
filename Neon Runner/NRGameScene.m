@@ -232,13 +232,10 @@ static const int MAX_TRAPS = 20;
     }
     
     if (firstBody.categoryBitMask == playerCategory && secondBody.categoryBitMask == trapCategory) {
-        // Game over since player hit trap
         NSLog(@"Player hit trap");
         NSLog(@"Final score: %d", self.gameModel.score);
         self.paused = YES;
         [self.controller performSegueWithIdentifier:@"gameOver" sender:self];
-        //Navigate to a game over screen?
-    
     }
 }
 
