@@ -47,22 +47,20 @@ static const int MAX_TRAPS = 20;
         self.physicsWorld.contactDelegate = self;
     }
     return self;
-    
 }
 
 -(void)setUpPlayer {
     // 150 is just some arbitrary distance declaring how far away the player is from the left of screen
     SKSpriteNode* player = [SKSpriteNode spriteNodeWithImageNamed:@"Character"];
     player.name = @"player";
-    player.size = CGSizeMake((self.frame.size.height/3.0) - 40, (self.frame.size.height/3.0) - 40);
-    player.position = CGPointMake(150, self.frame.size.height / 2.0);
+    player.size = CGSizeMake((self.frame.size.height/4.0) - 40, (self.frame.size.height/4.0) - 40);
+    player.position = CGPointMake(150, self.frame.size.height / 2.0 - 20);
     player.zPosition = 4.0;
     player.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:player.size];
     player.physicsBody.categoryBitMask = playerCategory;
     player.physicsBody.contactTestBitMask = trapCategory;
     player.physicsBody.collisionBitMask = trapCategory;
     [self addChild:player];
-    NSLog(@"%f", player.size.width);
 }
 
 -(void)setUpTraps {
@@ -134,7 +132,6 @@ static const int MAX_TRAPS = 20;
             lastLane = lane;
             numTrapsToAdd -= 1;
             [node setHidden:NO];
-            NSLog(@"Added trap to el screen");
         }
         
         
@@ -143,9 +140,8 @@ static const int MAX_TRAPS = 20;
         }
     }];
     SKSpriteNode* player = (SKSpriteNode*) [self childNodeWithName:@"player"];
-    if (lastTrap.position.x < (self.frame.size.width - (player.size.width * 1.2) - lastTrap.size.width)) {
+    if (lastTrap.position.x < (self.frame.size.width - (player.size.width * 1.7) - lastTrap.size.width)) {
         [self setNewTrapsRequired:YES];
-        NSLog(@"%f",player.size.width);
     }
 }
 
@@ -183,7 +179,6 @@ static const int MAX_TRAPS = 20;
 -(void)swipedUp {
     if ([self.gameModel movePlayer:NR_UP]) {
         [self movePlayer:NR_UP];
-        NSLog(@"Player moved up to lane %ld", (long)self.gameModel.player.lane);
     }
     
 }
@@ -191,15 +186,24 @@ static const int MAX_TRAPS = 20;
 -(void)swipedDown {
     if ([self.gameModel movePlayer:NR_DOWN]) {
         [self movePlayer:NR_DOWN];
-        NSLog(@"Player moved down to lane %ld", (long)self.gameModel.player.lane);
     }
 }
 
 -(void)movePlayer:(NRDirection)direction {
     SKNode* player = [self childNodeWithName:@"player"];
-    CGPoint pos = player.position;
-    pos.y = (direction == NR_UP)? pos.y + self.laneSwitchDistance : pos.y - self.laneSwitchDistance;
-    player.position = pos;
+    float rotateAngle;
+    float moveY;
+    if (direction == NR_UP) {
+        rotateAngle = -1.5708;
+        moveY = self.laneSwitchDistance;
+    } else {
+        rotateAngle = 1.5708;
+        moveY = -self.laneSwitchDistance;
+    }
+    SKAction* rotate = [SKAction rotateByAngle:rotateAngle duration:0.5];
+    SKAction* move = [SKAction moveByX:0 y:moveY duration:0.5];
+    SKAction* animate = [SKAction group:@[rotate, move]];
+    [player runAction:animate];
 }
 
 // Potentially a good place to perform scene update method here
@@ -232,8 +236,6 @@ static const int MAX_TRAPS = 20;
     }
     
     if (firstBody.categoryBitMask == playerCategory && secondBody.categoryBitMask == trapCategory) {
-        NSLog(@"Player hit trap");
-        NSLog(@"Final score: %d", self.gameModel.score);
         self.paused = YES;
         [self.controller performSegueWithIdentifier:@"gameOver" sender:self];
     }
