@@ -75,6 +75,7 @@
         if (didWriteToFile) {
             UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Success!" message:@"Your score has been successfully submitted." preferredStyle:UIAlertControllerStyleAlert];
             [confirmation addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                [self.delegate returnHome];
                 [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
             }]];
             [self presentViewController:confirmation animated:YES completion:nil];

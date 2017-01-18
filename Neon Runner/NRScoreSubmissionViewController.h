@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NRScoreSubmissionDelegate.h"
 
 @interface NRScoreSubmissionViewController : UIViewController <UITextFieldDelegate>
 
@@ -15,6 +16,7 @@
 @property (weak) IBOutlet UITextField* nameField;
 @property (weak) IBOutlet UIButton* submit;
 @property (weak) IBOutlet UIButton* cancel;
+@property (weak) id<NRScoreSubmissionDelegate> delegate;
 
 @property (assign) int score;
 

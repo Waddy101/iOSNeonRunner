@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
 #import "NRScoreSubmissionViewController.h"
+#import "NRScoreSubmissionDelegate.h"
 
-@interface NRGameOverViewController : UIViewController
+@interface NRGameOverViewController : UIViewController<NRScoreSubmissionDelegate>
 
 @property (weak) IBOutlet UILabel* scoreLabel;
 @property (weak) IBOutlet UIButton* facebookButton;

@@ -60,6 +60,7 @@
 		20C52BFB1DDB7BFA00AEDE79 /* NRSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRSettingsViewController.h; sourceTree = "<group>"; };
 		20C52BFC1DDB7BFA00AEDE79 /* NRSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRSettingsViewController.m; sourceTree = "<group>"; };
 		20D3B9EA1E2E629A000E3037 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		20D8FBBD1E2F7FED00CB8091 /* NRScoreSubmissionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRScoreSubmissionDelegate.h; sourceTree = "<group>"; };
 		95431EA81E0B26EF003E6234 /* NRGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameScene.h; sourceTree = "<group>"; };
 		95431EA91E0B26EF003E6234 /* NRGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameScene.m; sourceTree = "<group>"; };
 		957178001E1488EA0062F10B /* NRGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameModel.h; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 				AFCA57551E2CEF5E001DA0DA /* NRGameOverViewController.m */,
 				204C04111E2EAE1B0052F445 /* NRScoreSubmissionViewController.h */,
 				204C04121E2EAE1B0052F445 /* NRScoreSubmissionViewController.m */,
+				20D8FBBD1E2F7FED00CB8091 /* NRScoreSubmissionDelegate.h */,
 				AF24C78B1DDB598B00962B7D /* Assets.xcassets */,
 				AF24C78D1DDB598C00962B7D /* LaunchScreen.storyboard */,
 				AF24C7901DDB598C00962B7D /* Info.plist */,
