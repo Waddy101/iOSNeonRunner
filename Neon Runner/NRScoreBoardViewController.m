@@ -140,8 +140,8 @@
     NSFileManager* fileManager = [NSFileManager defaultManager];
     if([fileManager fileExistsAtPath:path]) {
         NSArray* scores = [[NSArray alloc] initWithContentsOfFile:path];
-        int max = [scores count];
-        if (x < max) {
+        NSInteger max = [scores count];
+        if (x <= max) {
             NSString* value = [scores[x-1] componentsSeparatedByString:@","][y-1];
             return value;
         } else {

@@ -97,7 +97,7 @@ static const int MAX_TRAPS = 20;
     [self enumerateChildNodesWithName:@"trap" usingBlock:^(SKNode *node, BOOL *stop) {
         //Operate on each trap. Doctor we have to save the trap. It's a trap - Admiral Ackbar
         if (!node.hidden) {
-            node.position = CGPointMake(node.position.x - 5, node.position.y);
+            node.position = CGPointMake(node.position.x - self.gameModel.trapMovementSpeed, node.position.y);
         }
         
         if (node.position.x <= 0) {
@@ -208,18 +208,18 @@ static const int MAX_TRAPS = 20;
 
 // Potentially a good place to perform scene update method here
 -(void)update:(NSTimeInterval)currentTime {
+    
     if (self.gameModel.lastUpdatedTime == 0.0) {
         self.gameModel.lastUpdatedTime = currentTime;
     }
     
-    if (currentTime - self.gameModel.lastUpdatedTime >= 1) {
+    if (currentTime - self.gameModel.lastUpdatedTime >= 0.1) {
         [self.gameModel update:self.frame.size.width];
         SKLabelNode* scoreLabel = (SKLabelNode*)[self childNodeWithName:@"score"];
         scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.gameModel.score];
         self.gameModel.lastUpdatedTime = currentTime;
+        [self updateTrapPositions];
     }
-    [self updateTrapPositions];
-    
 }
 
 // SKPhysicsContactDelegate protocol method for collision detection

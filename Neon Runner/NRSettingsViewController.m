@@ -24,9 +24,14 @@
 }
 
 -(IBAction)resetData {
-    NSArray* empty = nil;
+    NSArray* empty = [[NSArray alloc] init];
     NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"scores.plist"];
-    [empty writeToFile:path atomically:YES];
+    BOOL didWriteToFile = [empty writeToFile:path atomically:YES];
+    if (didWriteToFile) {
+        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Success" message:@"The scoreboard data has been successfully reset." preferredStyle:UIAlertControllerStyleAlert];
+        [confirmation addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:confirmation animated:YES completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

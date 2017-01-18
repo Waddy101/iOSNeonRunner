@@ -34,11 +34,9 @@
     // Is the current top view the game view?
     if ([navController.topViewController isKindOfClass:[NRGameViewController class]]) {
         NRGameViewController* gameController = (NRGameViewController*)navController.topViewController;
-        // Pause the game here...
+        SKView* gameView = (SKView*)gameController.view;
+        gameView.paused = YES;
         
-    }
-    else {
-        NSLog(@"Unknown screen sent to background");
     }
     
 }

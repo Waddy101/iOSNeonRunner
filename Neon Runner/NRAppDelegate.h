@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpriteKit/SpriteKit.h>
 #import "NRGameViewController.h"
 
 @interface NRAppDelegate : UIResponder <UIApplicationDelegate>

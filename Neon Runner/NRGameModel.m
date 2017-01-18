@@ -8,6 +8,9 @@
 
 #import "NRGameModel.h"
 
+#define SPEED_UP_POINT 500 // Number of points player scored before the trap speed multiplier is increased
+#define POINT_INCREMENT_PER_UPDATE 5
+
 @implementation NRGameModel
 
 -(instancetype)init {
@@ -16,12 +19,18 @@
         _score = 0;
         _player = [[NRPlayer alloc]init];
         _lastUpdatedTime = 0.0; //arbitrary value to initialise the variable
+        _trapMovementSpeed = 10.0;
     }
     return self;
 }
 
 -(void)update:(float)sceneWidth {
-    self.score += 30;
+    self.score += POINT_INCREMENT_PER_UPDATE;
+    if (self.score > 0 && (self.score % SPEED_UP_POINT == 0)) {
+        self.trapMovementSpeed *= 1.01;
+        NSLog(@"Speed updated!");
+    }
+    
 }
 
 -(BOOL)movePlayer:(NRDirection)direction {
