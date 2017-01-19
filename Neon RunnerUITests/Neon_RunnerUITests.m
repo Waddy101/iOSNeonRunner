@@ -27,14 +27,54 @@
     // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
 }
 
+-(void)testSettingsButtonAndBackButton {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.buttons[@"Settings"] tap];
+    XCTAssertTrue(app.staticTexts[@"Music Volume"].exists);
+    [app.buttons[@"Go Back"] tap];
+    XCTAssertTrue(app.staticTexts[@"Neon Runner"].exists);
+}
+
+-(void)testScoreboardButtonAndBackButton {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.buttons[@"Scoreboard"] tap];
+    XCTAssertTrue(app.staticTexts[@"Username"].exists);
+    [app.buttons[@"Go Back"] tap];
+    XCTAssertTrue(app.staticTexts[@"Neon Runner"].exists);
+}
+
+-(void)testResetDataFunction {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.buttons[@"Start"] tap];
+    XCUIElement *testEle= app.staticTexts[@"Game Over"];
+    NSPredicate *exists = [NSPredicate predicateWithFormat:@"exists == 1"];
+    [self expectationForPredicate:exists evaluatedWithObject:testEle handler:nil];
+    [self waitForExpectationsWithTimeout:10 handler:nil];
+    [app.buttons[@"Add to Scoreboard"] tap];
+    XCUIElement *textField = [app.textFields elementBoundByIndex:0];
+    [textField tap];
+    [textField typeText:@"Adam"];
+    [textField typeText:@"\n"];
+    [app.buttons[@"Submit Score"] tap];
+    [app.alerts[@"Success!"].collectionViews.buttons[@"OK"] tap];
+    
+    XCUIElement *scoreboardButton = app.buttons[@"Scoreboard"];
+    [scoreboardButton tap];
+    XCTAssertTrue(app.staticTexts[@"a"].exists);
+    XCUIElement *goBackButton = app.buttons[@"Go Back"];
+    [goBackButton tap];
+    [app.buttons[@"Settings"] tap];
+    [app.buttons[@"Reset Data"] tap];
+    [app.alerts[@"Success"].collectionViews.buttons[@"OK"] tap];
+    [goBackButton tap];
+    [scoreboardButton tap];
+    XCTAssertFalse(app.staticTexts[@"a"].exists);
+  
+}
+
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
-}
-
-- (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
 @end
