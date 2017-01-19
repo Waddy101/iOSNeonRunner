@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "NRGameModel.h"
 #import "NREnums.h"
 
@@ -16,6 +17,7 @@
 // The presenting controller already has a strong copy, so only need a weak reference here
 @property (weak) NRGameModel* gameModel;
 @property (weak) UIViewController* controller;
+@property (strong) AVAudioPlayer* fxPlayer;
 
 // "Constant" values that's only known at run time since these depend on user's phone screen size
 @property (assign) float trapSize;

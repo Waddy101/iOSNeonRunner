@@ -21,6 +21,14 @@
     
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
+    NSBundle* mainBundle = [NSBundle mainBundle];
+    NSError* error;
+    NSURL* backgroundMusicURL = [NSURL fileURLWithPath:[mainBundle pathForResource:@"backgroundMusic" ofType:@"mp3"]];
+    self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    NSString* backgroundMusicVolume = [[NSUserDefaults standardUserDefaults] stringForKey:@"bkgVolume"];
+    [self.backgroundMusic setVolume: [backgroundMusicVolume floatValue]];
+    [self.backgroundMusic setNumberOfLoops:-1];
+    [self.backgroundMusic play];
     
     self.gameModel = [[NRGameModel alloc]init];
     // Create and configure the scene.
@@ -39,6 +47,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NRGameOverViewController* gameOverViewController = [segue destinationViewController];
     [gameOverViewController setScore:self.gameModel.score];
+    [self.backgroundMusic stop];
     // Get rid of scene to prevent a finished game from running in background behind game over screen
     // if user sends the application to background and then brings it back to foreground again
     SKView* skView = (SKView*)self.view;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import <GameKit/GameKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "NRGameScene.h"
 #import "NRGameModel.h"
 #import "NRGameOverViewController.h"
@@ -18,5 +19,6 @@
 @property (strong) NRGameModel* gameModel;
 @property (strong) NRGameScene* scene;
 @property (strong) NRGameOverViewController* gameOverView;
+@property (strong) AVAudioPlayer *backgroundMusic;
 
 @end

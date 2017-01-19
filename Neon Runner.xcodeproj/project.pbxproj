@@ -28,6 +28,10 @@
 		AF24C78F1DDB598C00962B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF24C78D1DDB598C00962B7D /* LaunchScreen.storyboard */; };
 		AF24C79A1DDB598C00962B7D /* Neon_RunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7991DDB598C00962B7D /* Neon_RunnerTests.m */; };
 		AF24C7A51DDB598C00962B7D /* Neon_RunnerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF24C7A41DDB598C00962B7D /* Neon_RunnerUITests.m */; };
+		AF9F3F1B1E30F175005F7303 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9F3F1A1E30F175005F7303 /* AVFoundation.framework */; };
+		AF9F3F1D1E30F57E005F7303 /* defaultPrefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF9F3F1C1E30F57E005F7303 /* defaultPrefs.plist */; };
+		AF9F3F1F1E30F935005F7303 /* fxMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF9F3F1E1E30F935005F7303 /* fxMusic.wav */; };
+		AF9F3F211E30FA58005F7303 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF9F3F201E30FA58005F7303 /* backgroundMusic.mp3 */; };
 		AFCA57561E2CEF5E001DA0DA /* NRGameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCA57551E2CEF5E001DA0DA /* NRGameOverViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +92,10 @@
 		AF24C7A01DDB598C00962B7D /* Neon RunnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neon RunnerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF24C7A41DDB598C00962B7D /* Neon_RunnerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Neon_RunnerUITests.m; sourceTree = "<group>"; };
 		AF24C7A61DDB598C00962B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF9F3F1A1E30F175005F7303 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AF9F3F1C1E30F57E005F7303 /* defaultPrefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPrefs.plist; sourceTree = "<group>"; };
+		AF9F3F1E1E30F935005F7303 /* fxMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fxMusic.wav; sourceTree = "<group>"; };
+		AF9F3F201E30FA58005F7303 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		AFCA57541E2CEF5E001DA0DA /* NRGameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameOverViewController.h; sourceTree = "<group>"; };
 		AFCA57551E2CEF5E001DA0DA /* NRGameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameOverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9F3F1B1E30F175005F7303 /* AVFoundation.framework in Frameworks */,
 				20D3B9EB1E2E629A000E3037 /* Accounts.framework in Frameworks */,
 				95D65CBB1E0B1DB0005C7307 /* SpriteKit.framework in Frameworks */,
 			);
@@ -122,6 +131,7 @@
 		AF24C7731DDB598B00962B7D = {
 			isa = PBXGroup;
 			children = (
+				AF9F3F1A1E30F175005F7303 /* AVFoundation.framework */,
 				20D3B9EA1E2E629A000E3037 /* Accounts.framework */,
 				95D65CBA1E0B1DB0005C7307 /* SpriteKit.framework */,
 				AF24C77E1DDB598B00962B7D /* Neon Runner */,
@@ -173,6 +183,7 @@
 				AF24C78D1DDB598C00962B7D /* LaunchScreen.storyboard */,
 				AF24C7901DDB598C00962B7D /* Info.plist */,
 				AF24C77F1DDB598B00962B7D /* Supporting Files */,
+				AF9F3F1C1E30F57E005F7303 /* defaultPrefs.plist */,
 			);
 			path = "Neon Runner";
 			sourceTree = "<group>";
@@ -180,6 +191,8 @@
 		AF24C77F1DDB598B00962B7D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AF9F3F201E30FA58005F7303 /* backgroundMusic.mp3 */,
+				AF9F3F1E1E30F935005F7303 /* fxMusic.wav */,
 				95D65CB41E0B1CC8005C7307 /* Background.png */,
 				95D65CB51E0B1CC8005C7307 /* Character.png */,
 				95D65CB61E0B1CC8005C7307 /* Spike.png */,
@@ -320,11 +333,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				95D65CB81E0B1CC8005C7307 /* Character.png in Resources */,
+				AF9F3F211E30FA58005F7303 /* backgroundMusic.mp3 in Resources */,
 				AF24C78F1DDB598C00962B7D /* LaunchScreen.storyboard in Resources */,
 				95D65CB91E0B1CC8005C7307 /* Spike.png in Resources */,
+				AF9F3F1D1E30F57E005F7303 /* defaultPrefs.plist in Resources */,
 				95D65CB71E0B1CC8005C7307 /* Background.png in Resources */,
 				AF24C78C1DDB598B00962B7D /* Assets.xcassets in Resources */,
 				AF24C78A1DDB598B00962B7D /* Main.storyboard in Resources */,
+				AF9F3F1F1E30F935005F7303 /* fxMusic.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

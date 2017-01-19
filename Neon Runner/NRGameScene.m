@@ -45,6 +45,13 @@ static const int MAX_TRAPS = 20;
         
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
+        
+        NSBundle* mainBundle = [NSBundle mainBundle];
+        NSError* error;
+        NSURL* backgroundMusicURL = [NSURL fileURLWithPath:[mainBundle pathForResource:@"fxMusic" ofType:@"wav"]];
+        self.fxPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+        NSString* backgroundMusicVolume = [[NSUserDefaults standardUserDefaults] stringForKey:@"fxVolume"];
+        [self.fxPlayer setVolume: [backgroundMusicVolume floatValue]];
     }
     return self;
 }
@@ -179,6 +186,7 @@ static const int MAX_TRAPS = 20;
 -(void)swipedUp {
     if ([self.gameModel movePlayer:NR_UP]) {
         [self movePlayer:NR_UP];
+        [self.fxPlayer play];
     }
     
 }
@@ -186,6 +194,7 @@ static const int MAX_TRAPS = 20;
 -(void)swipedDown {
     if ([self.gameModel movePlayer:NR_DOWN]) {
         [self movePlayer:NR_DOWN];
+        [self.fxPlayer play];
     }
 }
 

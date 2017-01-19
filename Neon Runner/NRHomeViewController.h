@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface NRHomeViewController : UIViewController
+
+@property (strong) AVAudioPlayer *backgroundMusic;
 
 @end

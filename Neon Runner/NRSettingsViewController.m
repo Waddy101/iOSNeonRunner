@@ -20,6 +20,13 @@
 }
 
 -(IBAction)goBack {
+    NSString* valueToSave = [NSString stringWithFormat:@"%f", self.soundFXVolume.value];
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"fxVolume"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    valueToSave = [NSString stringWithFormat:@"%f", self.musicVolume.value];
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"bkgVolume"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
