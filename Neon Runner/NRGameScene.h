@@ -26,7 +26,6 @@
 @property (assign) bool newTrapsRequired;
 
 -(instancetype)initWithSize:(CGSize)size model:(NRGameModel*)model controller:(UIViewController*)controller;
--(void)hideTraps;
 -(void)updateTrapPositions;
 
 @end

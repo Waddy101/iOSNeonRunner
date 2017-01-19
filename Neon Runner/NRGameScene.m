@@ -43,6 +43,7 @@ static const float FPS = 1/60.0;
         [self setUpPlayer];
         [self setUpScoreLabel];
         [self setUpTraps];
+        [self setUpPauseButton];
         
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
@@ -91,8 +92,25 @@ static const float FPS = 1/60.0;
 
 }
 
--(void)hideTraps {
-    //If trap is not on screen flag for moving back to right hand side
+-(void)setUpScoreLabel {
+    SKLabelNode* scoreLabel = [SKLabelNode labelNodeWithText:@"Score: 0"];
+    scoreLabel.name = @"score";
+    scoreLabel.position = CGPointMake(100, self.frame.size.height-30);
+    scoreLabel.zPosition = 3.0;
+    scoreLabel.fontColor = [SKColor whiteColor];
+    scoreLabel.fontSize = 24;
+    [self addChild:scoreLabel];
+}
+
+-(void)setUpPauseButton {
+    SKLabelNode* pauseButton = [SKLabelNode labelNodeWithText:@"| |"];
+    pauseButton.name = @"pause";
+    pauseButton.fontName = @"Helvetica-Bold";
+    pauseButton.position = CGPointMake(self.frame.size.width-50, self.frame.size.height-35);
+    pauseButton.zPosition = 1.0;
+    pauseButton.fontColor = [SKColor whiteColor];
+    pauseButton.fontSize = 24;
+    [self addChild:pauseButton];
 }
 
 -(void)updateTrapPositions {
@@ -151,16 +169,6 @@ static const float FPS = 1/60.0;
     if (lastTrap.position.x < (self.frame.size.width - (player.size.width * 1.7) - lastTrap.size.width)) {
         [self setNewTrapsRequired:YES];
     }
-}
-
--(void)setUpScoreLabel {
-    SKLabelNode* scoreLabel = [SKLabelNode labelNodeWithText:@"Score: 0"];
-    scoreLabel.name = @"score";
-    scoreLabel.position = CGPointMake(100, self.frame.size.height-30);
-    scoreLabel.zPosition = 3.0;
-    scoreLabel.fontColor = [SKColor whiteColor];
-    scoreLabel.fontSize = 24;
-    [self addChild:scoreLabel];
 }
 
 -(SKSpriteNode*)makeGameBoundary:(CGPoint)position ofSize:(CGSize)size {

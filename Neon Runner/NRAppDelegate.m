@@ -36,6 +36,7 @@
         NRGameViewController* gameController = (NRGameViewController*)navController.topViewController;
         SKView* gameView = (SKView*)gameController.view;
         gameView.paused = YES;
+        gameController.gameModel.isPaused = YES;
         
     }
     
@@ -45,8 +46,11 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     UINavigationController* navController = (UINavigationController*)self.window.rootViewController;
     if ([navController.topViewController isKindOfClass:[NRGameViewController class]]) {
-        SKView* gameView = (SKView*)navController.topViewController.view;
+        NRGameViewController* gameController = (NRGameViewController*)navController.topViewController;
+        SKView* gameView = (SKView*)gameController.view;
         gameView.paused = NO;
+        gameController.gameModel.isPaused = NO;
+        
     }
     NSLog(@"%@", navController.topViewController);
 }

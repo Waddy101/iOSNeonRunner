@@ -214,7 +214,6 @@
                             <constraint firstItem="Vkr-9V-3Yc" firstAttribute="top" secondItem="KjV-ZM-1tp" secondAttribute="bottom" constant="14" id="9SW-lf-6NO"/>
                             <constraint firstItem="Vkr-9V-3Yc" firstAttribute="leading" secondItem="exH-SV-ag5" secondAttribute="leading" id="CZQ-W7-R8B"/>
                             <constraint firstItem="Vkr-9V-3Yc" firstAttribute="centerX" secondItem="y0n-RA-wus" secondAttribute="centerX" id="DgL-sV-bgt"/>
-                            <constraint firstItem="AXc-Dy-DMJ" firstAttribute="top" secondItem="SZ3-W6-ylO" secondAttribute="topMargin" constant="20" id="LGd-ti-1kn"/>
                             <constraint firstItem="AXc-Dy-DMJ" firstAttribute="leading" secondItem="SZ3-W6-ylO" secondAttribute="leadingMargin" id="MNd-Ss-edy"/>
                             <constraint firstItem="KjV-ZM-1tp" firstAttribute="centerX" secondItem="SZ3-W6-ylO" secondAttribute="centerX" constant="1" id="QW9-1G-dOT"/>
                             <constraint firstItem="exH-SV-ag5" firstAttribute="top" secondItem="y0n-RA-wus" secondAttribute="bottom" constant="21" id="TaR-au-6gu"/>
@@ -263,7 +262,6 @@
         <!--Game Over View Controller-->
         <scene sceneID="htm-GW-eNx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7X1-mT-cmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="GuO-FN-hcm" customClass="NRGameOverViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JbB-NO-mcP"/>
@@ -365,7 +363,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BhW-aU-G1m" firstAttribute="top" secondItem="xha-dW-q5c" secondAttribute="topMargin" constant="20" id="3la-Wt-sy3"/>
                             <constraint firstItem="RDa-w7-6PQ" firstAttribute="top" secondItem="xS6-Ka-r1w" secondAttribute="bottom" constant="29" id="Aco-FJ-9aC"/>
                             <constraint firstItem="xS6-Ka-r1w" firstAttribute="baseline" secondItem="6Q8-Hn-i2I" secondAttribute="firstBaseline" id="BX3-cr-lDg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FSX-55-0Ca" secondAttribute="trailing" constant="92" id="GXy-sd-uB2"/>
@@ -397,6 +394,7 @@
                         <outlet property="twitterButton" destination="6Q8-Hn-i2I" id="sv4-CM-3hG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7X1-mT-cmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1807" y="153"/>
         </scene>
@@ -548,7 +546,6 @@
                             <constraint firstItem="XBY-pd-MBu" firstAttribute="top" secondItem="ViE-j7-8mP" secondAttribute="bottom" constant="347" id="60H-6U-aEd"/>
                             <constraint firstItem="ViE-j7-8mP" firstAttribute="leading" secondItem="Ljz-t5-Xtl" secondAttribute="leadingMargin" id="Xqg-RB-t0m"/>
                             <constraint firstItem="ViE-j7-8mP" firstAttribute="top" secondItem="63g-IN-bqq" secondAttribute="bottom" id="sie-ia-muI"/>
-                            <constraint firstItem="ViE-j7-8mP" firstAttribute="top" secondItem="Ljz-t5-Xtl" secondAttribute="topMargin" constant="20" id="uI6-qx-x87"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

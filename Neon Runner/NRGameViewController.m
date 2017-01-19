@@ -15,9 +15,6 @@
     // Do any additional setup after loading the view.
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    skView.showsDrawCount = YES;
     
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
@@ -37,14 +34,30 @@
     self.gameModel = [[NRGameModel alloc]init];
     // Create and configure the scene.
     self.scene = [[NRGameScene alloc]initWithSize:skView.bounds.size model:self.gameModel controller:self];
-        // Present the scene.
+    // Present the scene.
     [skView presentScene:self.scene];
-    NSLog(@"Width: %f, height: %f", skView.bounds.size.width, skView.bounds.size.height);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch* tap = [touches anyObject];
+    SKView* skView = (SKView*)self.view;
+    CGPoint loc = [tap locationInNode:skView.scene];
+    SKNode* node = [skView.scene nodeAtPoint:loc];
+    if ([node.name isEqualToString:@"pause"]) {
+        if (self.gameModel.isPaused) {
+            skView.scene.paused = NO;
+            self.gameModel.isPaused = NO;
+        }
+        else {
+            skView.scene.paused = YES;
+            self.gameModel.isPaused = YES;
+        }
+    }
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

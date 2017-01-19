@@ -19,6 +19,7 @@
         _score = 0;
         _player = [[NRPlayer alloc]init];
         _trapMovementSpeed = 5.0;
+        _isPaused = NO;
     }
     return self;
 }

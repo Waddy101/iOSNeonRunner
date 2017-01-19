@@ -17,7 +17,7 @@
 @property (assign) int score;
 @property (strong) NRPlayer* player;
 @property (assign) float trapMovementSpeed;
-
+@property (assign) BOOL isPaused;
 @property (assign) NSTimeInterval lastUpdatedTime;
 
 -(void)update:(float)sceneWidth;
