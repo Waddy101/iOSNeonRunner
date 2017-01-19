@@ -29,6 +29,10 @@
     [self.backgroundMusic setVolume: [backgroundMusicVolume floatValue]];
     [self.backgroundMusic setNumberOfLoops:-1];
     [self.backgroundMusic play];
+    NSURL* popSoundURL =[NSURL fileURLWithPath:[mainBundle pathForResource:@"popSound" ofType:@"wav"]];
+    self.popSound = [[AVAudioPlayer alloc] initWithContentsOfURL:popSoundURL error:&error];
+    NSString* popSoundVolume = [[NSUserDefaults standardUserDefaults] stringForKey:@"fxVolume"];
+    [self.popSound setVolume: [popSoundVolume floatValue]];
     
     self.gameModel = [[NRGameModel alloc]init];
     // Create and configure the scene.
@@ -47,6 +51,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NRGameOverViewController* gameOverViewController = [segue destinationViewController];
     [gameOverViewController setScore:self.gameModel.score];
+    [self.popSound play];
     [self.backgroundMusic stop];
     // Get rid of scene to prevent a finished game from running in background behind game over screen
     // if user sends the application to background and then brings it back to foreground again

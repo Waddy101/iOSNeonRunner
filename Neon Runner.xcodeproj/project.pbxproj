@@ -32,6 +32,7 @@
 		AF9F3F1D1E30F57E005F7303 /* defaultPrefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF9F3F1C1E30F57E005F7303 /* defaultPrefs.plist */; };
 		AF9F3F1F1E30F935005F7303 /* fxMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF9F3F1E1E30F935005F7303 /* fxMusic.wav */; };
 		AF9F3F211E30FA58005F7303 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF9F3F201E30FA58005F7303 /* backgroundMusic.mp3 */; };
+		AF9F3F231E30FCE0005F7303 /* popSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF9F3F221E30FCE0005F7303 /* popSound.wav */; };
 		AFCA57561E2CEF5E001DA0DA /* NRGameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCA57551E2CEF5E001DA0DA /* NRGameOverViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		AF9F3F1C1E30F57E005F7303 /* defaultPrefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPrefs.plist; sourceTree = "<group>"; };
 		AF9F3F1E1E30F935005F7303 /* fxMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fxMusic.wav; sourceTree = "<group>"; };
 		AF9F3F201E30FA58005F7303 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		AF9F3F221E30FCE0005F7303 /* popSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = popSound.wav; sourceTree = "<group>"; };
 		AFCA57541E2CEF5E001DA0DA /* NRGameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRGameOverViewController.h; sourceTree = "<group>"; };
 		AFCA57551E2CEF5E001DA0DA /* NRGameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRGameOverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,8 +162,8 @@
 				20C52BF51DDB7B9000AEDE79 /* NRGameViewController.h */,
 				20C52BF61DDB7B9000AEDE79 /* NRGameViewController.m */,
 				95431EA81E0B26EF003E6234 /* NRGameScene.h */,
-				95431EA91E0B26EF003E6234 /* NRGameScene.m */,
 				957178001E1488EA0062F10B /* NRGameModel.h */,
+				95431EA91E0B26EF003E6234 /* NRGameScene.m */,
 				957178011E1488EA0062F10B /* NRGameModel.m */,
 				957178031E149E310062F10B /* NRPlayer.h */,
 				957178041E149E310062F10B /* NRPlayer.m */,
@@ -191,6 +193,7 @@
 		AF24C77F1DDB598B00962B7D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AF9F3F221E30FCE0005F7303 /* popSound.wav */,
 				AF9F3F201E30FA58005F7303 /* backgroundMusic.mp3 */,
 				AF9F3F1E1E30F935005F7303 /* fxMusic.wav */,
 				95D65CB41E0B1CC8005C7307 /* Background.png */,
@@ -332,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9F3F231E30FCE0005F7303 /* popSound.wav in Resources */,
 				95D65CB81E0B1CC8005C7307 /* Character.png in Resources */,
 				AF9F3F211E30FA58005F7303 /* backgroundMusic.mp3 in Resources */,
 				AF24C78F1DDB598C00962B7D /* LaunchScreen.storyboard in Resources */,

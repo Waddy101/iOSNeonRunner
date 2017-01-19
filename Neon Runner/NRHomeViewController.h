@@ -11,6 +11,4 @@
 
 @interface NRHomeViewController : UIViewController
 
-@property (strong) AVAudioPlayer *backgroundMusic;
-
 @end

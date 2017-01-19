@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSString* backgroundVolume = [[NSUserDefaults standardUserDefaults] stringForKey:@"bkgVolume"];
+    self.musicVolume.value = [backgroundVolume floatValue];
+    NSString* soundFXVolume = [[NSUserDefaults standardUserDefaults] stringForKey:@"fxVolume"];
+    self.soundFXVolume.value = [soundFXVolume floatValue];
 }
 
 -(IBAction)goBack {

@@ -20,5 +20,6 @@
 @property (strong) NRGameScene* scene;
 @property (strong) NRGameOverViewController* gameOverView;
 @property (strong) AVAudioPlayer *backgroundMusic;
+@property (strong) AVAudioPlayer *popSound;
 
 @end

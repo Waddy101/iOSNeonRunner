@@ -31,7 +31,7 @@
     float width = self.view.frame.size.width;
     float height = self.view.frame.size.height;
     float leftStart = width/2.0 - width/2.2;
-    UILabel* headerLeft = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 60.0, width/2.2, height/7.5)];
+    UILabel* headerLeft = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 75.0, width/2.2, height/7.5)];
     headerLeft.layer.borderWidth = 1.0;
     headerLeft.layer.borderColor = [UIColor whiteColor].CGColor;
     headerLeft.text = @"Username";
@@ -41,7 +41,7 @@
                        26];
     [self.view addSubview:headerLeft];
     
-    UILabel* headerRight = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 60.0,width/2.2,height/7.5)];
+    UILabel* headerRight = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 75.0,width/2.2,height/7.5)];
     headerRight.layer.borderWidth = 1.0;
     headerRight.layer.borderColor = [UIColor whiteColor].CGColor;
     headerRight.text = @"Score";
@@ -51,7 +51,7 @@
                        26];
     [self.view addSubview:headerRight];
     
-    UILabel* cell11 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 60.0 + height/7.5,width/2.2,height/7.5)];
+    UILabel* cell11 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 75.0 + height/7.5,width/2.2,height/7.5)];
     cell11.layer.borderWidth = 1.0;
     cell11.layer.borderColor = [UIColor whiteColor].CGColor;
     cell11.text = cell11Text;
@@ -59,7 +59,7 @@
     cell11.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell11];
     
-    UILabel* cell12 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 60.0 + height/7.5,width/2.2,height/7.5)];
+    UILabel* cell12 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 75.0 + height/7.5,width/2.2,height/7.5)];
     cell12.layer.borderWidth = 1.0;
     cell12.layer.borderColor = [UIColor whiteColor].CGColor;
     cell12.text = cell12Text;
@@ -67,7 +67,7 @@
     cell12.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell12];
     
-    UILabel* cell21 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 60.0 + (height/7.5)*2,width/2.2,height/7.5)];
+    UILabel* cell21 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 75.0 + (height/7.5)*2,width/2.2,height/7.5)];
     cell21.layer.borderWidth = 1.0;
     cell21.layer.borderColor = [UIColor whiteColor].CGColor;
     cell21.text = cell21Text;
@@ -75,7 +75,7 @@
     cell21.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell21];
     
-    UILabel* cell22 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 60.0 + (height/7.5)*2,width/2.2,height/7.5)];
+    UILabel* cell22 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 75.0 + (height/7.5)*2,width/2.2,height/7.5)];
     cell22.layer.borderWidth = 1.0;
     cell22.layer.borderColor = [UIColor whiteColor].CGColor;
     cell22.text = cell22Text;
@@ -83,7 +83,7 @@
     cell22.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell22];
     
-    UILabel* cell31 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 60.0 + (height/7.5)*3,width/2.2,height/7.5)];
+    UILabel* cell31 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 75.0 + (height/7.5)*3,width/2.2,height/7.5)];
     cell31.layer.borderWidth = 1.0;
     cell31.layer.borderColor = [UIColor whiteColor].CGColor;
     cell31.text = cell31Text;
@@ -91,7 +91,7 @@
     cell31.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell31];
     
-    UILabel* cell32 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 60.0 + (height/7.5)*3,width/2.2,height/7.5)];
+    UILabel* cell32 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 75.0 + (height/7.5)*3,width/2.2,height/7.5)];
     cell32.layer.borderWidth = 1.0;
     cell32.layer.borderColor = [UIColor whiteColor].CGColor;
     cell32.text = cell32Text;
@@ -99,7 +99,7 @@
     cell32.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell32];
     
-    UILabel* cell41 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 60.0 + (height/7.5)*4,width/2.2,height/7.5)];
+    UILabel* cell41 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 75.0 + (height/7.5)*4,width/2.2,height/7.5)];
     cell41.layer.borderWidth = 1.0;
     cell41.layer.borderColor = [UIColor whiteColor].CGColor;
     cell41.text = cell41Text;
@@ -107,7 +107,7 @@
     cell41.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell41];
     
-    UILabel* cell42 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 60.0 + (height/7.5)*4,width/2.2,height/7.5)];
+    UILabel* cell42 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 75.0 + (height/7.5)*4,width/2.2,height/7.5)];
     cell42.layer.borderWidth = 1.0;
     cell42.layer.borderColor = [UIColor whiteColor].CGColor;
     cell42.text = cell42Text;
@@ -115,7 +115,7 @@
     cell42.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell42];
     
-    UILabel* cell51 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 60.0 + (height/7.5)*5,width/2.2,height/7.5)];
+    UILabel* cell51 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart, 75.0 + (height/7.5)*5,width/2.2,height/7.5)];
     cell51.layer.borderWidth = 1.0;
     cell51.layer.borderColor = [UIColor whiteColor].CGColor;
     cell51.text = cell51Text;
@@ -123,14 +123,14 @@
     cell51.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell51];
     
-    UILabel* cell52 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 60.0 + (height/7.5)*5,width/2.2,height/7.5)];
+    UILabel* cell52 = [[UILabel alloc]initWithFrame:CGRectMake(leftStart + width/2.2, 75.0 + (height/7.5)*5,width/2.2,height/7.5)];
     cell52.layer.borderWidth = 1.0;
     cell52.layer.borderColor = [UIColor whiteColor].CGColor;
     cell52.text = cell52Text;
     cell52.textColor = [UIColor whiteColor];
     cell52.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:cell52];
-
+    
     [self.view setNeedsDisplay];
     
 }

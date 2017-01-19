@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>fxVolume</key>
-	<integer>1</integer>
+	<real>1</real>
 	<key>bkgVolume</key>
 	<integer>1</integer>
 </dict>
