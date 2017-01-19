@@ -13,6 +13,7 @@
 static const uint32_t playerCategory = 0x1 << 0;
 static const uint32_t trapCategory = 0x1 << 1;
 static const int MAX_TRAPS = 20;
+static const float FPS = 1/60.0;
 
 @implementation NRGameScene
 
@@ -213,7 +214,7 @@ static const int MAX_TRAPS = 20;
         self.gameModel.lastUpdatedTime = currentTime;
     }
     
-    if (currentTime - self.gameModel.lastUpdatedTime >= 0.1) {
+    if (currentTime - self.gameModel.lastUpdatedTime >= FPS) {
         [self.gameModel update:self.frame.size.width];
         SKLabelNode* scoreLabel = (SKLabelNode*)[self childNodeWithName:@"score"];
         scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.gameModel.score];

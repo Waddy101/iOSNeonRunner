@@ -9,7 +9,7 @@
 #import "NRGameModel.h"
 
 #define SPEED_UP_POINT 500 // Number of points player scored before the trap speed multiplier is increased
-#define POINT_INCREMENT_PER_UPDATE 5
+#define POINT_INCREMENT_PER_UPDATE 1
 
 @implementation NRGameModel
 
@@ -18,8 +18,7 @@
     if (self) {
         _score = 0;
         _player = [[NRPlayer alloc]init];
-        _lastUpdatedTime = 0.0; //arbitrary value to initialise the variable
-        _trapMovementSpeed = 10.0;
+        _trapMovementSpeed = 5.0;
     }
     return self;
 }
